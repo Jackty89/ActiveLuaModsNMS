@@ -10,7 +10,7 @@ Languages =
     ["PL"] = "Polish",
     ["NL"] = "Dutch",
     ["PT"] = "Portuguese",
-    ["LA"] = "LatinAmeraicanSpanish", --this is not a typo
+    ["LA"] = "LatinAmericanSpanish",
     ["BR"] = "BrazilianPortuguese",
     ["Z1"] = "SimplifiedChinese",
     ["ZH"] = "TraditionalChinese",
@@ -54,31 +54,31 @@ SubstanceOrProduct = { ["Substance"] = "Substance", ["Product"] =  "Product"}
 
 -- AddNewFood structure
 -- {
--- 	["FoodID"] = "CustomID",
--- 	["RecipeIngredients"] =
--- 	{
--- 		--multiple recipes possible
---		--Recipe1
--- 		{
--- 			{"LAUNCHSUB", "5", SubstanceOrProduct["Substance"]},
--- 			{"FOOD_P_RADFARM", "2", SubstanceOrProduct["Product"]},
--- 			{"FOOD_V_COW", "1", SubstanceOrProduct["Product"]}
--- 		},
---		--Recipe2
---		{...
---		}
--- 	},
--- 	["RecipeCookingTime"] = "time",
--- 	["RecipeCookingAmount"] = "amount",
--- 	["Stacksize"] = "stacksize",
--- 	["Price"] = "price",
--- 	["NewFoodIcon"] = "TEXTURES/UI/FRONTEND/ICONS/COOKINGPRODUCTS/PRODUCT.COFFEE.DDS",
--- 	["CookingMethod"] = RecipeCookingMethod["Drink"],
--- 	["ConsumeReward"] = NewFoodConsumeReward["Energy1"],
--- 	["Languages"] =
--- 	{
--- 		{Languages["EN"], "Coffee", "This hot beverage gains its flavor and warmth from a complex blend of Sievert Beans, providing a radiant and rich mouth feel. Weirdly, the warmth seems to disappear almost instantly after consumption."}
--- 	}
+--    ["FoodID"] = "CustomID",
+--    ["RecipeIngredients"] =
+--    {
+--        --multiple recipes possible
+--        --Recipe1
+--        {
+--            {"LAUNCHSUB", "5", SubstanceOrProduct["Substance"]},
+--            {"FOOD_P_RADFARM", "2", SubstanceOrProduct["Product"]},
+--            {"FOOD_V_COW", "1", SubstanceOrProduct["Product"]}
+--        },
+--        --Recipe2
+--        {...
+--        }
+--    },
+--    ["RecipeCookingTime"] = "time",
+--    ["RecipeCookingAmount"] = "amount",
+--    ["Stacksize"] = "stacksize",
+--    ["Price"] = "price",
+--    ["NewFoodIcon"] = "TEXTURES/UI/FRONTEND/ICONS/COOKINGPRODUCTS/PRODUCT.COFFEE.DDS",
+--    ["CookingMethod"] = RecipeCookingMethod["Drink"],
+--    ["ConsumeReward"] = NewFoodConsumeReward["Energy1"],
+--    ["Languages"] =
+--    {
+--        {Languages["EN"], "Coffee", "This hot beverage gains its flavor and warmth from a complex blend of Sievert Beans, providing a radiant and rich mouth feel. Weirdly, the warmth seems to disappear almost instantly after consumption."}
+--    }
 -- },
 -- end structure
 
@@ -207,7 +207,7 @@ NMS_MOD_DEFINITION_CONTAINER =
     ["MODIFICATIONS"] =
     {
         {
-            ["MBIN_CHANGE_TABLE"] 	=
+            ["MBIN_CHANGE_TABLE"]    =
             {
                 {
                     ["MBIN_FILE_SOURCE"]    = "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
@@ -540,12 +540,12 @@ function FillCustomlangFile()
     return NewLanguagueFile(table.concat(NewFoodLangEntries))
 end
 
-local AddCsutomLanguageFiles = NMS_MOD_DEFINITION_CONTAINER["ADD_FILES"]
+local AddCustomLanguageFiles = NMS_MOD_DEFINITION_CONTAINER["ADD_FILES"]
 for _Key , Language in pairs(Languages) do
-    AddCsutomLanguageFiles[#AddCsutomLanguageFiles +1] =
+    AddCustomLanguageFiles[#AddCustomLanguageFiles +1] =
     {
-        ["FILE_DESTINATION"] 	=	"LANGUAGE/NMS_"..CustomLanguageTag.."_"..Language..".EXML",
-        ["FILE_CONTENT"] 		=	FillCustomlangFile()
+        ["FILE_DESTINATION"]    =    "LANGUAGE/NMS_"..CustomLanguageTag.."_"..Language..".EXML",
+        ["FILE_CONTENT"]        =    FillCustomlangFile()
     }
 end
 
@@ -561,7 +561,7 @@ for i = 1, #MakeProductOrSubstanceACookingIngredient do
     SetSubstancesOrProductsAsCookingProducts[#SetSubstancesOrProductsAsCookingProducts + 1] =
     {
         ["SPECIAL_KEY_WORDS"] = {"ID", MakeProductOrSubstanceACookingIngredient[i][2]},
-        ["VALUE_CHANGE_TABLE"] 	=
+        ["VALUE_CHANGE_TABLE"]    =
         {
             {"CookingIngredient", SetCookingIngredientTrue}
         }

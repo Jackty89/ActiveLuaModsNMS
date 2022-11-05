@@ -156,9 +156,9 @@ function FillCustomlangFile()
     return NewLanguagueFile(table.concat(DescriptionEntries))
 end
 
-local AddCsutomLanguageFiles = NMS_MOD_DEFINITION_CONTAINER["ADD_FILES"]
+local AddCustomLanguageFiles = NMS_MOD_DEFINITION_CONTAINER["ADD_FILES"]
 for _Key , Language in pairs(Languages) do
-    AddCsutomLanguageFiles[#AddCsutomLanguageFiles +1] =
+    AddCustomLanguageFiles[#AddCustomLanguageFiles +1] =
     {
         ["FILE_DESTINATION"] =    "LANGUAGE/NMS_"..CustomLanguageTag.."_"..Language..".EXML",
         ["FILE_CONTENT"]     =    FillCustomlangFile()
