@@ -6,4 +6,5 @@
 *.rar
 *.7zip
 .vscode
+_*
 
