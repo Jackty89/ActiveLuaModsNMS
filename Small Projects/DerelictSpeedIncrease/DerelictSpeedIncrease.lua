@@ -3,6 +3,13 @@ Author = "Jackty89"
 
 SpeedMultiplier = "1"
 
+InputSpeedMultiplier = {SpeedMultiplier,
+[[
+    Would you like to modify the multiplier?
+    Default = 1 | Current = >> ]] .. (SpeedMultiplier) .. [[ <<
+]]}
+
+SpeedMultiplier = GUIF(InputSpeedMultiplier)
 GroundWalkSpeed = "4.4" --these are their actual values
 GroundRunSpeed = "8" --these are their actual values
 

@@ -13,10 +13,11 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     ["MBIN_FILE_SOURCE"] = "GCCHARACTERGLOBALS.GLOBAL.MBIN",
+                    ["INTEGER_TO_FLOAT"] = "FORCE",
                     ["EXML_CHANGE_TABLE"] =
                     {
                         {
-                            ["VALUE_CHANGE_TABLE"]     =
+                            ["VALUE_CHANGE_TABLE"] =
                             {
                                 {"LadderDistanceToAutoMount", "-1"},
                                 {"SitPostureChangeTimeMin", "0.1"},
