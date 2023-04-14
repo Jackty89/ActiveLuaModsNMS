@@ -3,6 +3,7 @@ Description = "A small mod that make exocraft faster but also stand out from eac
 
 GCTechnologyTablePath = "METADATA/REALITY/TABLES/NMS_REALITY_GCTECHNOLOGYTABLE.MBIN"
 VehicleGlobalsPath = "GCVEHICLEGLOBALS.GLOBAL.MBIN"
+InventoryTablePath = "METADATA/REALITY/TABLES/INVENTORYTABLE.MBIN"
 
 NautilonUnderwaterEnginePower = "10" -- Acceleration speed
 NautilonUnderwaterEngineFalloff = "1" -- 1 = 100% so no fall of , 0.9 =90% means speed wil be 10% slower  => 45u
@@ -19,6 +20,23 @@ VehicleFuelRate = "0.3"
 -- VehicleFuelRateSurvival = "0.5"
 VehicleBoostFuelRate = "1"
 VehicleBoostFuelRateSurvival = "2"
+
+ImproveVehicle = true
+
+MaxInventoryCap = 120
+MaxTechCap = 60
+
+InventoryWidth = 10
+InventoryHeight = 12
+
+TechWidth = 10
+TechHeight = 6
+
+VehicleSizes = {
+    "VehicleSmall",
+    "VehicleMedium",
+    "VehicleLarge"
+}
 
 ExoCraftsNewValues = {
     {
@@ -83,20 +101,32 @@ ExoCraftsNewValues = {
     }
 }
 
--- HOVBERCraft is an unreleased vehcile this is NOT the Nomad
-NMS_MOD_DEFINITION_CONTAINER = {
+InputUserImproveVehicle = {ImproveVehicle,
+[[
+    Would you like improve exocraft slots?
+    Default = Y | Current = >> ]] .. (ImproveVehicle and "Y" or "N") .. [[ <<
+]]}
+
+ImproveVehicle = GUIF(InputUserImproveVehicle)
+
+NMS_MOD_DEFINITION_CONTAINER = 
+{
     ["MOD_FILENAME"] = ModName.. ".pak",
     ["MOD_DESCRIPTION"] = Description,
     ["MOD_AUTHOR"] = "Jackty89",
-    ["MODIFICATIONS"] = {
+    ["MODIFICATIONS"] = 
+    {
         {
-            ["MBIN_CHANGE_TABLE"] = {
+            ["MBIN_CHANGE_TABLE"] = 
+            {
                 {
                     ["MBIN_FILE_SOURCE"] = VehicleGlobalsPath,
                     ["INTEGER_TO_FLOAT"] = "FORCE",
-                    ["EXML_CHANGE_TABLE"] = {
+                    ["EXML_CHANGE_TABLE"] =
+                    {
                         {
-                            ["VALUE_CHANGE_TABLE"] = {
+                            ["VALUE_CHANGE_TABLE"] =
+                            {
                                 {"MechJetpackForce", MechSuitJPForce}, --Original 70
                                 {"MechJetpackMaxSpeed", MechSuitJPMaxSpeed},
                                 {"MechJetpackMaxUpSpeed", MechSuitJPMaxUpSpeed},
@@ -128,6 +158,12 @@ NMS_MOD_DEFINITION_CONTAINER = {
                                 {"Bonus", MechSuitCanonDamange}
                             }
                         }
+                    }
+                },
+                {
+                    ["MBIN_FILE_SOURCE"] = InventoryTablePath,
+                    ["EXML_CHANGE_TABLE"] =
+                    {
                     }
                 }
             }
@@ -169,4 +205,62 @@ for i = 1, #ExoCraftsNewValues do
             }
         }
     end
+end
+
+local ChangesToInventoryTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][3]["EXML_CHANGE_TABLE"]
+function EditInventory(type, maxSlot)
+    if maxSlot then
+        ChangesToInventoryTable[#ChangesToInventoryTable + 1] =
+        {
+            ["SPECIAL_KEY_WORDS"] = {type, "GcInventoryLayoutGenerationDataEntry.xml"},
+            ["VALUE_CHANGE_TABLE"] =
+            {
+                {"MinSlots", MaxInventoryCap},
+                {"MaxSlots", MaxInventoryCap},
+                {"MinTechSlots", MaxTechCap},
+                {"MaxTechSlots", MaxTechCap}
+            }
+        }
+    end
+
+    if type ~= "Suite" then
+        ChangesToInventoryTable[#ChangesToInventoryTable + 1] =
+        {
+            ["SPECIAL_KEY_WORDS"] = {type, "GcInventoryLayoutGenerationDataEntry.xml", "Bounds", "GcInventoryLayoutGenerationBounds.xml"},
+            ["VALUE_CHANGE_TABLE"] =
+            {
+                {"MaxWidthSmall",     InventoryWidth},
+                {"MaxHeightSmall",    InventoryHeight},
+                {"MaxWidthStandard",  InventoryWidth},
+                {"MaxHeightStandard", InventoryHeight},
+                {"MaxWidthLarge",     InventoryWidth},
+                {"MaxHeightLarge",    InventoryHeight}
+            }
+        }
+
+        ChangesToInventoryTable[#ChangesToInventoryTable + 1] =
+        {
+            ["SPECIAL_KEY_WORDS"] = {type, "GcInventoryLayoutGenerationDataEntry.xml", "TechBounds", "GcInventoryLayoutGenerationBounds.xml"},
+            ["VALUE_CHANGE_TABLE"] =
+            {
+                {"MaxWidthSmall",     TechWidth},
+                {"MaxHeightSmall",    TechHeight},
+                {"MaxWidthStandard",  TechWidth},
+                {"MaxHeightStandard", TechHeight},
+                {"MaxWidthLarge",     TechWidth},
+                {"MaxHeightLarge",    TechHeight}
+            }
+        }
+    end
+end
+
+
+function ImproveVehicleInventory()
+    for _key, vehicleSize in ipairs(VehicleSizes) do
+        EditInventory(vehicleSize, true)
+    end
+end
+
+if ImproveVehicle then
+    ImproveVehicleInventory()
 end
