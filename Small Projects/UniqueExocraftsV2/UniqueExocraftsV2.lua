@@ -21,7 +21,7 @@ VehicleFuelRate = "0.3"
 VehicleBoostFuelRate = "1"
 VehicleBoostFuelRateSurvival = "2"
 
-ImproveVehicle = true
+ImproveVehicleInventory = true
 
 MaxInventoryCap = 120
 MaxTechCap = 60
@@ -101,23 +101,23 @@ ExoCraftsNewValues = {
     }
 }
 
-InputUserImproveVehicle = {ImproveVehicle,
+InputUserImproveVehicleInventory = {ImproveVehicleInventory,
 [[
     Would you like improve exocraft slots?
-    Default = Y | Current = >> ]] .. (ImproveVehicle and "Y" or "N") .. [[ <<
+    Default = Y | Current = >> ]] .. (ImproveVehicleInventory and "Y" or "N") .. [[ <<
 ]]}
 
-ImproveVehicle = GUIF(InputUserImproveVehicle)
+ImproveVehicleInventory = GUIF(InputUserImproveVehicleInventory, 10)
 
-NMS_MOD_DEFINITION_CONTAINER = 
+NMS_MOD_DEFINITION_CONTAINER =
 {
     ["MOD_FILENAME"] = ModName.. ".pak",
     ["MOD_DESCRIPTION"] = Description,
     ["MOD_AUTHOR"] = "Jackty89",
-    ["MODIFICATIONS"] = 
+    ["MODIFICATIONS"] =
     {
         {
-            ["MBIN_CHANGE_TABLE"] = 
+            ["MBIN_CHANGE_TABLE"] =
             {
                 {
                     ["MBIN_FILE_SOURCE"] = VehicleGlobalsPath,
@@ -255,12 +255,12 @@ function EditInventory(type, maxSlot)
 end
 
 
-function ImproveVehicleInventory()
+function ImproveVehicleInventoryFunc()
     for _key, vehicleSize in ipairs(VehicleSizes) do
         EditInventory(vehicleSize, true)
     end
 end
 
-if ImproveVehicle then
-    ImproveVehicleInventory()
+if ImproveVehicleInventory then
+    ImproveVehicleInventoryFunc()
 end
