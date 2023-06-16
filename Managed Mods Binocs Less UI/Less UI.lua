@@ -6,7 +6,6 @@ NMS_MOD_DEFINITION_CONTAINER =
 ["MODIFICATIONS"]           =
     {
         {
-            ["PAK_FILE_SOURCE"]     = "NMSARC.86055253.pak",
             ["MBIN_CHANGE_TABLE"]   =
             {
                 {

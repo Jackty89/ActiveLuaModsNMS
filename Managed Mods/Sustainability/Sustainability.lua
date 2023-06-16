@@ -6,8 +6,7 @@ NMS_MOD_DEFINITION_CONTAINER =
 ["MODIFICATIONS"]           =
     {
         {
-            ["PAK_FILE_SOURCE"]     = "NMSARC.514F1D3.pak",
-            ["MBIN_CHANGE_TABLE"]   =
+            ["MBIN_CHANGE_TABLE"] =
             {
                 {
                     ["MBIN_FILE_SOURCE"]    = "METADATA/REALITY/TABLES/NMS_REALITY_GCRECIPETABLE.MBIN",
