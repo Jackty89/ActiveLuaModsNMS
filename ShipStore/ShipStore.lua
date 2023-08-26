@@ -1,7 +1,7 @@
 -- Choose one of these fe. english would be Languages[1], french Languages[2] ...
 Total_Seeds_Per_Class = 10000
 
-Input_Total_Seeds_Per_Class = {ExtraChanges,
+Input_Total_Seeds_Per_Class = {Total_Seeds_Per_Class,
 [[
     How many seeds do you wish to generate per Class-Type?
     Default = 10000  Current = >> ]] .. Total_Seeds_Per_Class .. [[ <<
@@ -120,7 +120,7 @@ Ship_Types =
 }
 
 ClassChoice = 4
-InputClassChoice = {ExtraChanges,
+InputClassChoice = {ClassChoice,
 [[
     What class range do you wish?
     * 4 = C -> S
@@ -141,7 +141,7 @@ else
     Classes = ClassesS
 end
 
-InputPriceMultiplier = {ExtraChanges,
+InputPriceMultiplier = {PriceMultiplier,
 [[
     Do you wish to cahnge the price multiplier?
     Default = 1 | Current = >> ]] .. PriceMultiplier .. [[ <<
@@ -664,7 +664,7 @@ for _, ship_type in pairs(Ship_Types) do
         Add_To_Product_Table[#Add_To_Product_Table + 1]  =
         {
             ["PRECEDING_KEY_WORDS"] = {"Table"},
-            ["ADD"] = Create_New_Product(product_id, name_id, name_LC_id, desc_id, desc_id, 1, price, product_icon)
+            ["ADD"] = Create_New_Product(product_id, name_id, name_LC_id, desc_id, desc_id, 1, math.floor(price), product_icon)
         }
         Add_To_Consumable_Table[#Add_To_Consumable_Table + 1] =
         {

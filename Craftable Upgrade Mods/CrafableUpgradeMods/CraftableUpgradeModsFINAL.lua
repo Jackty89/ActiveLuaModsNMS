@@ -212,9 +212,15 @@ XClassMods =
 
             {"U_SENTGUN", "", "", "6"},
             {"U_SENTSUIT", "", "", "6"},
-            {"ROGUE_CARBOX", "", "", "6"},
-            {"ROGUE_HAZBOX", "", "", "6"},
-            {"ROGUE_STARTBOX", "", "", "6"}
+            {"ROGUE_SGUNBOX", "", "", "6"},
+            {"ROGUE_SMARTBOX", "", "", "6"},
+            {"ROGUE_GUNBOX", "", "", "6"},
+
+            {"ROGUE_TECHBOX", "", "", "7"},
+            {"ROGUE_CLASSBOX", "", "", "7"},
+            {"ROGUE_CARBOX", "", "", "7"},
+            {"ROGUE_HAZBOX", "", "", "7"},
+            {"ROGUE_STARTBOX", "", "", "7"}
         }
     }
 }

@@ -74,6 +74,14 @@ if ExtraChanges then
     }
     ChangesToTechnologyTable[#ChangesToTechnologyTable +1] =
     {
+        ["SPECIAL_KEY_WORDS"] = {"ID","LAUNCHER"},
+        ["VALUE_CHANGE_TABLE"] =
+        {
+            {"Core", "False"}
+        }
+    }
+    ChangesToTechnologyTable[#ChangesToTechnologyTable +1] =
+    {
         ["SPECIAL_KEY_WORDS"] = {"ID","HYPERDRIVE"},
         ["VALUE_CHANGE_TABLE"] =
         {
@@ -91,6 +99,14 @@ if ExtraChanges then
     ChangesToTechnologyTable[#ChangesToTechnologyTable +1] =
     {
         ["SPECIAL_KEY_WORDS"] = {"ID","SHIPJUMP_ROBO"},
+        ["VALUE_CHANGE_TABLE"] =
+        {
+            {"Core", "False"}
+        }
+    }
+    ChangesToTechnologyTable[#ChangesToTechnologyTable +1] =
+    {
+        ["SPECIAL_KEY_WORDS"] = {"ID","LAUNCHER_ROBO"},
         ["VALUE_CHANGE_TABLE"] =
         {
             {"Core", "False"}
