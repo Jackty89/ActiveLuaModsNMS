@@ -1,4 +1,3 @@
--- Choose one of these fe. english would be Languages[1], french Languages[2] ...
 Total_Seeds_Per_Class = 10000
 
 Input_Total_Seeds_Per_Class = {Total_Seeds_Per_Class,

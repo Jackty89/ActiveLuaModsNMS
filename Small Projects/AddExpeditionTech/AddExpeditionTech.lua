@@ -49,25 +49,30 @@ function AddTech(id)
     }
 end
 
-function UnlockEntry(id)
-    return [[
-        <Property value="GcUnlockableItemTreeNode.xml">
-            <Property name="Unlockable" value="]]..id..[[" />
-            <Property name="Children" />
-        </Property>]]
-end
-
 function AddTechToTree(id)
+    UnlockItemTree[#UnlockItemTree + 1] =
+    {
+        ["SPECIAL_KEY_WORDS"] = {"Unlockable", "T_WALL_H"},
+        ["PRECEDING_KEY_WORDS"] = {"GcUnlockableItemTreeNode.xml"},
+        ["SEC_SAVE_TO"] = "UnlockableItemTreeNode"
+    }
+    UnlockItemTree[#UnlockItemTree + 1] =
+    {
+        ["SEC_EDIT"] = "UnlockableItemTreeNode",
+        ["VALUE_CHANGE_TABLE"] =
+        {
+            {"Unlockable", id},
+        }
+    }
     UnlockItemTree[#UnlockItemTree + 1] =
     {
         ["SPECIAL_KEY_WORDS"] = {"Title", "UI_SHIP_TECH_TREE", "Title", "UI_TECH_TREE_SUB","Unlockable", "SHIPJUMP1"},
         ["LINE_OFFSET"] = "+1",
-        ["ADD"] = UnlockEntry(id)
+        ["SEC_ADD_NAMED"] = "UnlockableItemTreeNode"
     }
 end
 
 for _key, id in pairs(Ids) do
-    print(id)
     AddTech(id)
     AddTechToTree(id)
 end

@@ -3,19 +3,6 @@ Author = "Jackty89"
 
 DefaultRealityPath = "METADATA/REALITY/DEFAULTREALITY.MBIN"
 
-HiveMapId = "CHART_HIVE"
-
-function CreateMapShopEntry(NewId)
-    return
-    [[
-        <Property value="NMSString0x10.xml">
-            <Property name="Value" value="]]..NewId..[[" />
-        </Property>
-    ]]
-end
-
-StarMapShopEntry = CreateMapShopEntry(HiveMapId)
-
 NMS_MOD_DEFINITION_CONTAINER =
 {
     ["MOD_FILENAME"] = ModName..".pak",
@@ -39,10 +26,21 @@ NMS_MOD_DEFINITION_CONTAINER =
                             }
                         },
                         {
-                            -- , "AlwaysPresentProducts"
-                            ["PRECEDING_KEY_WORDS"] = {"TradeSettings", "MapShop"},
-                            ["LINE_OFFSET"] = "+1",
-                            ["ADD"] = StarMapShopEntry
+                            ["SPECIAL_KEY_WORDS"] = {"MapShop", "GcTradeData.xml"},
+                            ["PRECEDING_KEY_WORDS"] = {"AlwaysPresentProducts", "NMSString0x10.xml"},
+                            ["SEC_SAVE_TO"] = "SHOPENTRY"
+                        },
+                        {
+                            ["SEC_EDIT"] = "SHOPENTRY",
+                            ["VALUE_CHANGE_TABLE"] =
+                            {
+                                {"Value", "CHART_HIVE"},
+                            }
+                        },
+                        {
+                            ["SPECIAL_KEY_WORDS"] = {"MapShop", "GcTradeData.xml"},
+                            ["PRECEDING_KEY_WORDS"] = {"AlwaysPresentProducts"},
+                            ["SEC_ADD_NAMED"] = "SHOPENTRY"
                         }
                     }
                 }

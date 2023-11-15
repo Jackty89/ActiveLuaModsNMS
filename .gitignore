@@ -5,6 +5,7 @@
 *.exe
 *.rar
 *.7zip
+*.zip
 .vscode
 _*
 *.7z
