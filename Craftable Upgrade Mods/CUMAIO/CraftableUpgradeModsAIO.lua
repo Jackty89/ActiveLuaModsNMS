@@ -7,35 +7,26 @@ Procedural_Table_Technology_Path = "METADATA/REALITY/TABLES/NMS_REALITY_GCPROCED
 
 Cost_Type_Factory = "FACTORY"
 Cost_Type_Nanite = "NANITES"
-
 Ship_Tree = "UI_SHIP_TECH_TREE"
 Item_Trees_Ship = "ShipTech"
-
 Suit_Tree = "UI_SUIT_TECH_TREE"
 Item_Trees_Suit = "SuitTech"
-
 Weapon_Tree = "UI_WEAP_TECH_TREE"
 Item_Trees_Weapon = "WeapTech"
-
 Exocraft_Tree = "UI_EXOCRAFT_TECH_TREE"
 Item_Trees_Exocraft = "ExocraftTech"
-
 Freighter_Tree = "UI_FREIGHTER_TREE"
 Item_Trees_Freighter = "FreighterTech"
-
 Factory_Tree = "UI_PRODUCT_TREE"
 Item_Trees_Factory = "CraftProducts"
-
 Tech_Tree_Sub = "UI_TECH_TREE_SUB"
 Tech_Tree_Sub_Factory = "UI_PRODUCT_TREE_FARM"
-
 Ship_Root_Tech = "SHIPJUMP1"
 Suit_Root_Tech = "ENERGY"
 Weapon_Root_Tech = "LASER"
 Exo_Root_Tech = "VEHICLE_ENGINE"
 Freighter_Root_Tech = "FRIGATE_FUEL_1"
 Factory_Tree_Tech = "PRODFUEL2"
-
 Crafted_Freighter_Mod_Descr_Id = "UP_FR_CRAFTED_DESC"
 Custom_Language_Tag = "CustomFrModsDesc"
 
@@ -63,25 +54,32 @@ Languages =
     ["JA"] = "Japanese",
     ["US"] = "USEnglish"
 }
-AddNewLanguatext =
+
+Add_New_Language_Text =
 {
-    {Languages["EN"], "A crafted freighter upgrade.&#xA;&#xA;Can be re-deployed into your own capital ship to improve its &lt;TECHNOLOGY&gt;Technology&lt;&gt;."},
-    {Languages["FR"], "Une amélioration de cargo fabriqué.&#xA;&#xA;Peut être redéployée dans votre propre vaisseau amiral pour améliorer sa &lt;TECHNOLOGY&gt;Technologie&lt;&gt;."},
-    {Languages["IT"], "Un miglioramento per il mercantile.&#xA;&#xA;Può essere utilizzato sulla propria ammiraglia per migliorarne l'&lt;TECHNOLOGY&gt;Tecnologia&lt;&gt;."},
-    {Languages["DE"], "Ein einsetzbares Frachter-Upgrade.&#xA;&#xA;Kann in dein eigenes Hauptschiff wiedereingebaut werden, um dessen &lt;TECHNOLOGY&gt;Technologie&lt;&gt; zu verbessern."},
-    {Languages["ES"], "Una mejora del carguero hecha a mano.&#xA;&#xA;Se puede volver a desplegar en tu propia nave principal para mejorar su &lt;TECHNOLOGY&gt;Tecnología&lt;&gt;."},
-    {Languages["RU"], "Модернизация грузового корабля.&#xA;&#xA;Может быть переоборудована в ваш собственный капитальный корабль для улучшения его &lt;TECHNOLOGY&gt;Technology&lt;&gt;."},
-    {Languages["PL"], "Rozmieszczalne ulepszenie frachtowca. MoÅ¼na ponownie zainstalowaÄ na wÅasnym statku gÅównym, aby ulepszyÄ jego &lt;TECHNOLOGY&gt;technologie&lt;&gt;."},
-    {Languages["NL"], "Een upgrade gemaakt voor een vlaggenschip.&#xA;&#xA;Kan worden geïnstalleerd in je eigen vlaggenschip om de &lt;TECHNOLOGY&gt;Technologie&lt;&gt; te verbeteren."},
-    {Languages["PT"], "Uma atualização do cargueiro implementável.&#xA;&#xA;Pode ser reimplementada na sua própria nave capital para melhorar o &lt;TECHNOLOGY&gt;Tecnologia&lt;&gt;."},
-    {Languages["LA"], "Una mejora del carguero hecha a mano.&#xA;&#xA;Se puede volver a desplegar en tu propia nave principal para mejorar su &lt;TECHNOLOGY&gt;Tecnología&lt;&gt;."},
-    {Languages["BR"], "Uma atualização implantável de nave cargueira.&#xA;&#xA;Pode ser reimplantada na sua nave capital para melhorar o &lt;TECHNOLOGY&gt;Tecnologia&lt;&gt; dela."},
-    {Languages["Z1"], "可合成的貨船升級。&#xA;&#xA;可以被移除及重新安裝於星際貨船上，以提升&lt;TECHNOLOGY&gt;科技元件&lt;&gt;效能。"},
-    {Languages["ZH"], "可合成的貨船升級。&#xA;&#xA;可以被移除及重新安裝於星際貨船上，以提升&lt;TECHNOLOGY&gt;科技元件&lt;&gt;效能。"},
-    {Languages["Z2"], "可合成的貨船升級。&#xA;&#xA;可以被移除及重新安裝於星際貨船上，以提升&lt;TECHNOLOGY&gt;科技元件&lt;&gt;效能。"},
-    {Languages["KO"], ""},
-    {Languages["JA"], ""},
-    {Languages["US"], "A crafted freighter upgrade.&#xA;&#xA;Can be re-deployed into your own capital ship to improve its &lt;TECHNOLOGY&gt;Technology&lt;&gt;."}
+    {
+        ["LANGUAGE_ID"] = "UP_FR_CRAFTED_DESC",
+        ["LANGUAGE_ENTRIES"] =
+        {
+            [Languages["EN"]] = "A crafted freighter upgrade.&#xA;&#xA;Can be re-deployed into your own capital ship to improve it's &lt;TECHNOLOGY&gt;Technology&lt;&gt;.",
+            [Languages["FR"]] = "Une amélioration de cargo fabriqué.&#xA;&#xA;Peut être redéployée dans votre propre vaisseau amiral pour améliorer sa &lt;TECHNOLOGY&gt;Technologie&lt;&gt;.",
+            [Languages["IT"]] = "Un miglioramento per il mercantile.&#xA;&#xA;Può essere utilizzato sulla propria ammiraglia per migliorarne l'&lt;TECHNOLOGY&gt;Tecnologia&lt;&gt;.",
+            [Languages["DE"]] = "Ein einsetzbares Frachter-Upgrade.&#xA;&#xA;Kann in dein eigenes Hauptschiff wiedereingebaut werden, um dessen &lt;TECHNOLOGY&gt;Technologie&lt;&gt; zu verbessern.",
+            [Languages["ES"]] = "Una mejora del carguero hecha a mano.&#xA;&#xA;Se puede volver a desplegar en tu propia nave principal para mejorar su &lt;TECHNOLOGY&gt;Tecnología&lt;&gt;.",
+            [Languages["RU"]] = "Модернизация грузового корабля.&#xA;&#xA;Может быть переоборудована в ваш собственный капитальный корабль для улучшения его &lt;TECHNOLOGY&gt;Technology&lt;&gt;.",
+            [Languages["PL"]] = "Rozmieszczalne ulepszenie frachtowca. MoÅ¼na ponownie zainstalowaÄ na wÅasnym statku gÅównym, aby ulepszyÄ jego &lt;TECHNOLOGY&gt;technologie&lt;&gt;.",
+            [Languages["NL"]] = "Een upgrade gemaakt voor een vlaggenschip.&#xA;&#xA;Kan worden geïnstalleerd in je eigen vlaggenschip om de &lt;TECHNOLOGY&gt;Technologie&lt;&gt; te verbeteren.",
+            [Languages["PT"]] = "Uma atualização do cargueiro implementável.&#xA;&#xA;Pode ser reimplementada na sua própria nave capital para melhorar o &lt;TECHNOLOGY&gt;Tecnologia&lt;&gt;.",
+            [Languages["LA"]] = "Una mejora del carguero hecha a mano.&#xA;&#xA;Se puede volver a desplegar en tu propia nave principal para mejorar su &lt;TECHNOLOGY&gt;Tecnología&lt;&gt;.",
+            [Languages["BR"]] = "Uma atualização implantável de nave cargueira.&#xA;&#xA;Pode ser reimplantada na sua nave capital para melhorar o &lt;TECHNOLOGY&gt;Tecnologia&lt;&gt; dela.",
+            [Languages["Z1"]] = "可合成的貨船升級。&#xA;&#xA;可以被移除及重新安裝於星際貨船上，以提升&lt;TECHNOLOGY&gt;科技元件&lt;&gt;效能。",
+            [Languages["ZH"]] = "可合成的貨船升級。&#xA;&#xA;可以被移除及重新安裝於星際貨船上，以提升&lt;TECHNOLOGY&gt;科技元件&lt;&gt;效能。",
+            [Languages["Z2"]] = "可合成的貨船升級。&#xA;&#xA;可以被移除及重新安裝於星際貨船上，以提升&lt;TECHNOLOGY&gt;科技元件&lt;&gt;效能。",
+            [Languages["KO"]] = "Please provide translation in the comments. A crafted freighter upgrade.&#xA;&#xA;Can be re-deployed into your own capital ship to improve it's &lt;TECHNOLOGY&gt;Technology&lt;&gt;.",
+            [Languages["JA"]] = "Please provide translation in the comments. A crafted freighter upgrade.&#xA;&#xA;Can be re-deployed into your own capital ship to improve it's &lt;TECHNOLOGY&gt;Technology&lt;&gt;.",
+            [Languages["US"]] = "A crafted freighter upgrade.&#xA;&#xA;Can be re-deployed into your own capital ship to improve its &lt;TECHNOLOGY&gt;Technology&lt;&gt;."
+        }
+    }
 }
 
 General_Upgrade_Mods =
@@ -407,7 +405,7 @@ local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1
 local Changes_To_Procedural_Technology_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][2]["EXML_CHANGE_TABLE"]
 local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][3]["EXML_CHANGE_TABLE"]
 
-function NewDescriptionText(newDescId)
+function New_Language_File_Entry(newDescId)
     local result =
     [[
     <Property value="TkLocalisationEntry.xml">
@@ -564,7 +562,7 @@ function Create_Requirement_Sections()
     end
 end
 
-function NewLanguagueFile(DescriptionEntries)
+function New_Languague_File(DescriptionEntries)
     return
     [[<?xml version="1.0" encoding="utf-8"?>
         <Data template="TkLocalisationTable">
@@ -576,46 +574,46 @@ function NewLanguagueFile(DescriptionEntries)
     ]]
 end
 
-function NewLanguageEntry(Language, NewDescription)
+function New_Language_Entry(Language, Language_Text)
     return
     [[
         <Property name="]]..Language..[[" value="VariableSizeString.xml">
-            <Property name="Value" value="]]..NewDescription..[[" />
+            <Property name="Value" value="]]..Language_Text..[[" />
         </Property>
     ]]
 end
 
-function NewDescriptionText(newDescId, LanguageEntries)
+function New_Language_File_Entry(Language_ID, Language_Entries)
     return
     [[
         <Property value="TkLocalisationEntry.xml">
-            <Property name="Id" value="]]..newDescId..[[" />
-            ]]..LanguageEntries..[[
+            <Property name="Id" value="]]..Language_ID..[[" />
+            ]]..Language_Entries..[[
         </Property>
     ]]
 end
 
-function FillCustomlangFile()
-    local DescriptionEntries = {}
-    local NewDescriptionID = Crafted_Freighter_Mod_Descr_Id
-    local LanguageEntries = {}
-
-    for i = 1, #AddNewLanguatext do
-        local Language = AddNewLanguatext[i][1]
-        local NewDescription = AddNewLanguatext[i][2]
-        table.insert(LanguageEntries, NewLanguageEntry(Language, NewDescription))
+function Fill_Custom_Language_File(Language)
+    local Language_Entries = {}
+    local Language_File_Entries = {}
+    local Language_ID = ""
+    for i = 1, #Add_New_Language_Text do
+        Language_ID = Add_New_Language_Text[i]["LANGUAGE_ID"]
+        local Language_Text_Entries = Add_New_Language_Text[i]["LANGUAGE_ENTRIES"]
+        local Language_Text = Language_Text_Entries[Language]
+        table.insert(Language_Entries, New_Language_Entry(Language, Language_Text))
     end
-    table.insert(DescriptionEntries, NewDescriptionText(NewDescriptionID, table.concat(LanguageEntries)))
+    table.insert(Language_File_Entries, New_Language_File_Entry(Language_ID, table.concat(Language_Entries)))
 
-    return NewLanguagueFile(table.concat(DescriptionEntries))
+    return New_Languague_File(table.concat(Language_File_Entries))
 end
 
-function LanguageFileCreation()
+function Language_File_Creation()
     for _Key , Language in pairs(Languages) do
         Add_Custom_Language_Files[#Add_Custom_Language_Files +1] =
         {
             ["FILE_DESTINATION"] = "LANGUAGE/NMS_"..Custom_Language_Tag.."_"..Language..".EXML",
-            ["FILE_CONTENT"] = FillCustomlangFile()
+            ["FILE_CONTENT"] = Fill_Custom_Language_File(Language)
         }
     end
 end
@@ -982,7 +980,7 @@ function Add_Requirements_And_Enable_Craftable_To_All_Mods()
     end
 end
 
-LanguageFileCreation()
+Language_File_Creation()
 Create_Custom_Freighter_Mods()
 Create_Requirement_Sections()
 
