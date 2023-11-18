@@ -3,7 +3,7 @@ Mod_Name = "BurnBabyBurn"
 
 Unlockable_Item_Trees_Path = "METADATA/REALITY/TABLES/UNLOCKABLEITEMTREES.MBIN"
 Technology_Table_Path = "METADATA/REALITY/TABLES/NMS_REALITY_GCTECHNOLOGYTABLE.MBIN"
--- PlayerWeaponPropertiesTablePath = "METADATA/REALITY/TABLES/PLAYERWEAPONPROPERTIESTABLE.MBIN"
+Player_Weapon_Properties_Table_Path = "METADATA/REALITY/TABLES/PLAYERWEAPONPROPERTIESTABLE.MBIN"
 
 New_Weapon_Stats =
 {
@@ -33,17 +33,38 @@ New_Weapon_Stats =
         ["LEVEL"] = "1"
     }
 }
--- DefaultProjectile =
--- {
---     "MINE_GREN",
---     "GRENADE",
---     "CANNON",
---     "SMG",
---     "SHOTGUN",
---     "BOLTGUN",
---     "STUN_GREN",
---     "FLAMETHROW",
--- }
+
+DefaultProjectile =
+{
+    "FLAMETHROW",
+    "MINE_GREN",
+    "GRENADE",
+    "CANNON",
+    "SMG",
+    "SHOTGUN",
+    "BOLTGUN",
+    "STUN_GREN",
+}
+
+Effect_Choice = 1
+Input_Effect_Choice =
+{
+    Effect_Choice,
+    [[
+        What Effect should the new flamerthower projectile look like?
+        This is optional. Leave on default if you want flames.
+        * 1 = "FLAMETHROW"
+        * 2 = "MINE_GREN"
+        * 3 = "GRENADE"
+        * 4 = "CANNON"
+        * 5 = "SMG"
+        * 6 = "SHOTGUN"
+        * 7 = "BOLTGUN"
+        * 8 = "STUN_GREN"
+        Default = 1 | Current = >> ]] .. Effect_Choice .. [[ <<
+    ]]
+}
+Effect_Choice = GUIF(Input_Effect_Choice, 10)
 NMS_MOD_DEFINITION_CONTAINER =
 {
     ["MOD_FILENAME"] = Mod_Name..".pak",
@@ -60,19 +81,6 @@ NMS_MOD_DEFINITION_CONTAINER =
                     {
                     }
                 },
-                -- { --Optional, if you want to change the look of your projectile
-                --     ["MBIN_FILE_SOURCE"]     = PlayerWeaponPropertiesTablePath,
-                --     ["EXML_CHANGE_TABLE"]     =
-                --     {
-                --         {
-                --             ["SPECIAL_KEY_WORDS"] = {"DefaultProjectile", "FLAMETHROW"},
-                --             ["VALUE_CHANGE_TABLE"] =
-                --             {
-                --                 {"DefaultProjectile", DefaultProjectile[1]}
-                --             }
-                --         }
-                --     }
-                -- },
                 {
                     ["MBIN_FILE_SOURCE"] = Technology_Table_Path,
                     ["EXML_CHANGE_TABLE"] =
@@ -143,6 +151,19 @@ NMS_MOD_DEFINITION_CONTAINER =
                             ["VALUE_CHANGE_TABLE"] =
                             {
                                 {"Bonus", "12"}
+                            }
+                        }
+                    }
+                },
+                {
+                    ["MBIN_FILE_SOURCE"] = Player_Weapon_Properties_Table_Path,
+                    ["EXML_CHANGE_TABLE"] =
+                    {
+                        {
+                            ["SPECIAL_KEY_WORDS"] = {"DefaultProjectile", "FLAMETHROW"},
+                            ["VALUE_CHANGE_TABLE"] =
+                            {
+                                {"DefaultProjectile", DefaultProjectile[1]}
                             }
                         }
                     }
