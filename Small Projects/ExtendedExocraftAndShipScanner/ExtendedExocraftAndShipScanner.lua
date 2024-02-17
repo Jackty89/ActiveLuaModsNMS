@@ -142,18 +142,11 @@ end
 function Add_New_Scan_Events_For_Vehicle()
     Changes_To_Vehicle_Scan_Table[#Changes_To_Vehicle_Scan_Table + 1] =
     {
-        ["SPECIAL_KEY_WORDS"] = {"Value", "OUTPOST"},
-        ["SEC_SAVE_TO"] = "SCAN_EVENTS_MASTER"
+        ["SEC_EMPTY"] = "SCAN_EVENTS_MASTER"
     }
     for i = 1, #Scan_Entries do
         Add_Single_Scan_Event_For_Vehicle(Scan_Entries[i]["Value"], Scan_Entries[i]["Name"], Scan_Entries[i]["RequiredTech"], Scan_Entries[i]["Icon"])
     end
-    Changes_To_Vehicle_Scan_Table[#Changes_To_Vehicle_Scan_Table + 1] =
-    {
-        ["SEC_EDIT"] = "SCAN_EVENTS_MASTER",
-        ["SPECIAL_KEY_WORDS"] = {"Value", "OUTPOST"},
-        ["REMOVE"] = "SECTION",
-    }
     Changes_To_Vehicle_Scan_Table[#Changes_To_Vehicle_Scan_Table + 1] =
     {
         ["PRECEDING_KEY_WORDS"] = {"VehicleScanTable"},

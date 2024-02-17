@@ -220,7 +220,6 @@ function Single_Stat(Stat_Type, Bonus, Level)
     Changes_To_Technology_Table[#Changes_To_Technology_Table + 1] =
     {
         ["SEC_EDIT"] = "STATS_MASTER",
-        ["SPECIAL_KEY_WORDS"] = {"ID", "FLAME"},
         ["ADD_OPTION"] = "ADDafterSECTION",
         ["SEC_ADD_NAMED"] = Stat_Type.."SEC"
     }
@@ -229,18 +228,11 @@ end
 function Add_Stats()
     Changes_To_Technology_Table[#Changes_To_Technology_Table + 1] =
     {
-        ["SPECIAL_KEY_WORDS"] = {"ID", "FLAME"},
-        ["SEC_SAVE_TO"] = "STATS_MASTER"
+        ["SEC_EMPTY"] = "STATS_MASTER"
     }
     for i = 1, #New_Weapon_Stats do
         Single_Stat(New_Weapon_Stats[i]["STAT_TYPE"], New_Weapon_Stats[i]["BONUS"], New_Weapon_Stats[i]["LEVEL"])
     end
-    Changes_To_Technology_Table[#Changes_To_Technology_Table + 1] =
-    {
-        ["SEC_EDIT"] = "STATS_MASTER",
-        ["SPECIAL_KEY_WORDS"] = {"ID", "FLAME"},
-        ["REMOVE"] = "SECTION",
-    }
     Changes_To_Technology_Table[#Changes_To_Technology_Table + 1] =
     {
         ["SPECIAL_KEY_WORDS"] = {"ID", "FLAME"},

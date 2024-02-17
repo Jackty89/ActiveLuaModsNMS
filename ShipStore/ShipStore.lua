@@ -370,18 +370,6 @@ function Create_Ship_Base_Stats(ship_type)
     if ship_type == "Alien" then
         return [[
             <Property value="GcInventoryBaseStatEntry.xml">
-                <Property name="BaseStatID" value="SHIP_DAMAGE" />
-                <Property name="Value" value="1" />
-            </Property>
-            <Property value="GcInventoryBaseStatEntry.xml">
-                <Property name="BaseStatID" value="SHIP_SHIELD" />
-                <Property name="Value" value="1" />
-            </Property>
-            <Property value="GcInventoryBaseStatEntry.xml">
-                <Property name="BaseStatID" value="SHIP_HYPERDRIVE" />
-                <Property name="Value" value="1" />
-            </Property>
-            <Property value="GcInventoryBaseStatEntry.xml">
                 <Property name="BaseStatID" value="ALIEN_SHIP" />
                 <Property name="Value" value="1" />
             </Property>
@@ -390,38 +378,13 @@ function Create_Ship_Base_Stats(ship_type)
     if ship_type == "Robot" then
         return [[
             <Property value="GcInventoryBaseStatEntry.xml">
-                <Property name="BaseStatID" value="SHIP_DAMAGE" />
-                <Property name="Value" value="1" />
-            </Property>
-            <Property value="GcInventoryBaseStatEntry.xml">
-                <Property name="BaseStatID" value="SHIP_SHIELD" />
-                <Property name="Value" value="1" />
-            </Property>
-            <Property value="GcInventoryBaseStatEntry.xml">
-                <Property name="BaseStatID" value="SHIP_HYPERDRIVE" />
-                <Property name="Value" value="1" />
-            </Property>
-            <Property value="GcInventoryBaseStatEntry.xml">
                 <Property name="BaseStatID" value="ROBOT_SHIP" />
                 <Property name="Value" value="1" />
             </Property>
         ]]
     end
 
-    return [[
-        <Property value="GcInventoryBaseStatEntry.xml">
-            <Property name="BaseStatID" value="SHIP_DAMAGE" />
-            <Property name="Value" value="1" />
-        </Property>
-        <Property value="GcInventoryBaseStatEntry.xml">
-            <Property name="BaseStatID" value="SHIP_SHIELD" />
-            <Property name="Value" value="1" />
-        </Property>
-        <Property value="GcInventoryBaseStatEntry.xml">
-            <Property name="BaseStatID" value="SHIP_HYPERDRIVE" />
-            <Property name="Value" value="1" />
-        </Property>
-    ]]
+    return [[]]
 end
 
 function Create_Ship_Reward_Entry(ship_model, ship_seed, ship_slots, ship_technologies, ship_class, ship_base_stats, ship_type)
@@ -628,6 +591,7 @@ function Get_Ship_Data(ship_type, ship_class )
 
     return ship_type, ship_model, ship_class, price, custom_language_string
 end
+
 local Add_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
 local Add_To_Consumable_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][2]["EXML_CHANGE_TABLE"]
 local Add_To_Reward_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][3]["EXML_CHANGE_TABLE"]

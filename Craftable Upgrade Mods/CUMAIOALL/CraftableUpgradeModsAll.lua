@@ -1,4 +1,4 @@
-NexusModName = "CraftableUpgradeModsAIO"
+NexusModName = "CraftableUpgradeMods"
 Author = "jackty89"
 
 Unlockable_Item_Trees_Path = "METADATA/REALITY/TABLES/UNLOCKABLEITEMTREES.MBIN"
@@ -334,19 +334,6 @@ Requirements =
 }
 
 Class_Choice = 1
-Input_Class_Choice =
-{
-    Class_Choice,
-    [[
-        What class range do you wish?
-        * 1 = C -> S
-        * 2 = B -> S
-        * 3 = A -> S
-        * 4 = S
-        Default = 1 | Current = >> ]] .. Class_Choice .. [[ <<
-    ]]
-}
-Class_Choice = GUIF(Input_Class_Choice, 10)
 
 NMS_MOD_DEFINITION_CONTAINER =
 {

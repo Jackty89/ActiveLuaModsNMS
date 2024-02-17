@@ -26,7 +26,7 @@ NMS_MOD_DEFINITION_CONTAINER =
                     ["EXML_CHANGE_TABLE"] =
                     {
                         {
-                            --this isnt in base game now leaving it in case HG changes it
+                            --this is in base game now leaving it in case HG changes it
                             ["SPECIAL_KEY_WORDS"] = {"ID","SHIPGUN1"},
                             ["VALUE_CHANGE_TABLE"] =
                             {
@@ -34,7 +34,7 @@ NMS_MOD_DEFINITION_CONTAINER =
                             }
                         },
                         {
-                            --this isnt in base game now leaving it in case HG changes it
+                            --this is in base game now leaving it in case HG changes it
                             ["SPECIAL_KEY_WORDS"] = {"ID","SHIPGUN_ROBO"},
                             ["VALUE_CHANGE_TABLE"] =
                             {
@@ -50,6 +50,13 @@ NMS_MOD_DEFINITION_CONTAINER =
                         },
                         {
                             ["SPECIAL_KEY_WORDS"] = {"ID","SENT_LASER"},
+                            ["VALUE_CHANGE_TABLE"] =
+                            {
+                                {"Core", "False"}
+                            }
+                        },
+                        {
+                            ["SPECIAL_KEY_WORDS"] = {"ID","ATLAS_LASER"},
                             ["VALUE_CHANGE_TABLE"] =
                             {
                                 {"Core", "False"}

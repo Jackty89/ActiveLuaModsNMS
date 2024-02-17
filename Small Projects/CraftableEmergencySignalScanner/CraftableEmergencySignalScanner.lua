@@ -69,7 +69,6 @@ function Create_Requirement(Requirement)
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
     {
         ["SEC_EDIT"] = "PRODUCT_REQ_MASTER",
-        ["SPECIAL_KEY_WORDS"] = {"ID", "POWERCELL2"},
         ["ADD_OPTION"] = "ADDafterSECTION",
         ["SEC_ADD_NAMED"] = "SINGLE_REQ"
     }
@@ -78,18 +77,35 @@ end
 function Create_Requirement_Sections(Requirements)
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
     {
-        ["SPECIAL_KEY_WORDS"] = {"ID", "POWERCELL2"},
-        ["SEC_SAVE_TO"] = "PRODUCT_REQ_MASTER"
+        ["SEC_EMPTY"] = "PRODUCT_REQ_MASTER"
     }
 
     for i = 1, #Requirements do
         Create_Requirement(Requirements[i])
     end
-    Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
+end
+
+function Add_Prouct_To_Unlockable_Item_Tree(ProductId)
+
+    Changes_To_Unlockable_Item_Trees[#Changes_To_Unlockable_Item_Trees + 1] =
     {
-        ["SEC_EDIT"] = "PRODUCT_REQ_MASTER",
-        ["SPECIAL_KEY_WORDS"] = {"ID", "POWERCELL2"},
-        ["REMOVE"] = "SECTION"
+        ["SPECIAL_KEY_WORDS"] = {"Unlockable", "T_WALL_H"},
+        ["PRECEDING_KEY_WORDS"] = {"GcUnlockableItemTreeNode.xml"},
+        ["SEC_SAVE_TO"] = "ITEM_TREE_SEC"
+    }
+    Changes_To_Unlockable_Item_Trees[#Changes_To_Unlockable_Item_Trees + 1] =
+    {
+        ["SEC_EDIT"] = "ITEM_TREE_SEC",
+        ["VALUE_CHANGE_TABLE"] =
+        {
+            {"Unlockable", ProductId}
+        }
+    }
+    Changes_To_Unlockable_Item_Trees[#Changes_To_Unlockable_Item_Trees + 1] =
+    {
+        ["SPECIAL_KEY_WORDS"] = {"Unlockable", "PRODFUEL2"},
+        ["PRECEDING_KEY_WORDS"] = {"Children"},
+        ["SEC_ADD_NAMED"] = "ITEM_TREE_SEC"
     }
 end
 
@@ -118,28 +134,5 @@ function Change_Product_Requirement_And_Set_Craftable()
     end
 end
 
-function Add_Prouct_To_Unlockable_Item_Tree(ProductId)
-
-    Changes_To_Unlockable_Item_Trees[#Changes_To_Unlockable_Item_Trees + 1] =
-    {
-        ["SPECIAL_KEY_WORDS"] = {"Unlockable", "T_WALL_H"},
-        ["PRECEDING_KEY_WORDS"] = {"GcUnlockableItemTreeNode.xml"},
-        ["SEC_SAVE_TO"] = "ITEM_TREE_SEC"
-    }
-    Changes_To_Unlockable_Item_Trees[#Changes_To_Unlockable_Item_Trees + 1] =
-    {
-        ["SEC_EDIT"] = "ITEM_TREE_SEC",
-        ["VALUE_CHANGE_TABLE"] =
-        {
-            {"Unlockable", ProductId}
-        }
-    }
-    Changes_To_Unlockable_Item_Trees[#Changes_To_Unlockable_Item_Trees + 1] =
-    {
-        ["SPECIAL_KEY_WORDS"] = {"Unlockable", "PRODFUEL2"},
-        ["PRECEDING_KEY_WORDS"] = {"Children"},
-        ["SEC_ADD_NAMED"] = "ITEM_TREE_SEC"
-    }
-end
 
 Change_Product_Requirement_And_Set_Craftable()
