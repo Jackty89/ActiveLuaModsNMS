@@ -147,7 +147,7 @@ InputPriceMultiplier = {PriceMultiplier,
 ]]}
 
 Total_Seeds_Per_Class = GUIF(Input_Total_Seeds_Per_Class, 10)
-ExtraChanges = GUIF(InputClassChoice, 10)
+_ExtraChanges = GUIF(InputClassChoice, 10)
 PriceMultiplier = GUIF(InputPriceMultiplier, 10)
 
 
@@ -279,9 +279,9 @@ function Create_New_Product(NewProductID, NewProductName, NewProductNameLc, NewP
             <Property name="AltRequirements" />
             <Property name="Cost" value="GcItemPriceModifiers.xml">
                 <Property name="SpaceStationMarkup" value="0" />
-                <Property name="LowPriceMod" value="-0.1" />
-                <Property name="HighPriceMod" value="0.1" />
-                <Property name="BuyBaseMarkup" value="5" />
+                <Property name="LowPriceMod" value="0" />
+                <Property name="HighPriceMod" value="0" />
+                <Property name="BuyBaseMarkup" value="0" />
                 <Property name="BuyMarkupMod" value="0" />
             </Property>
             <Property name="RecipeCost" value="1" />
@@ -294,7 +294,7 @@ function Create_New_Product(NewProductID, NewProductName, NewProductNameLc, NewP
             <Property name="WikiCategory" value="Curio" />
             <Property name="IsCraftable" value="False" />
             <Property name="DeploysInto" value="" />
-            <Property name="EconomyInfluenceMultiplier" value="0.25" />
+            <Property name="EconomyInfluenceMultiplier" value="0" />
             <Property name="PinObjective" value="" />
             <Property name="PinObjectiveTip" value="" />
             <Property name="CookingIngredient" value="False" />
@@ -327,6 +327,7 @@ function Create_New_Consumable(NewProductID, NewProductConsumeRewardID)
             <Property name="AddCommunityTierClassIcon" value="False" />
             <Property name="SuppressResourceMessage" value="False" />
             <Property name="CustomOSD" value="" />
+            <Property name="RequiresMissionActive" value="" />
         </Property>
     ]]
 end

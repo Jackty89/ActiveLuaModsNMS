@@ -10,13 +10,13 @@
 .\ModScript\Managed Mods\No Auto Ladder\___USE.txt
 .\ModScript\Managed Mods\Reducable Containers\___USE.txt
 .\ModScript\Managed Mods\Sustainability\___USE.txt
-.\ModScript\MoreAndCheaperStarMaps\___USE.txt
-.\ModScript\MoreAndCheaperStarMaps\MEFTI\TEXTURES\___USE.txt
+.\ModScript\Not Mine\Atlas Orb Word-o-Rama\___USE.txt
 .\ModScript\ShipStoreV3\___USE.txt
 .\ModScript\Small Projects\___USE.txt
 .\ModScript\Small Projects\AddDerelictFreighterLootToStore\___USE.txt
 .\ModScript\Small Projects\BurnBabyBurn\___USE.txt
 .\ModScript\Small Projects\CheapPetSlots\___USE.txt
+.\ModScript\Small Projects\ClaimFreeExpeditionShips\___USE.txt
 .\ModScript\Small Projects\CraftableAlienToken\___USE.txt
 .\ModScript\Small Projects\CraftableEmergencySignalScanner\___USE.txt
 .\ModScript\Small Projects\DerelictSpeedIncrease\___USE.txt
@@ -24,11 +24,13 @@
 .\ModScript\Small Projects\ExtendedExocraftAndShipScanner\___USE.txt
 .\ModScript\Small Projects\FuelEconomy\___USE.txt
 .\ModScript\Small Projects\MaxUpgradeFreighterSlotAllClasses\___USE.txt
+.\ModScript\Small Projects\MoreAndCheaperStarMaps\___USE.txt
+.\ModScript\Small Projects\MoreAndCheaperStarMaps\MEFTI\TEXTURES\___USE.txt
 .\ModScript\Small Projects\QuietParts\___USE.txt
 .\ModScript\Small Projects\SlotMaster\___USE.txt
 .\ModScript\Small Projects\UninstallCoreWeapons\___USE.txt
 .\ModScript\Small Projects\UniqueExocraftsV2\___USE.txt
-.\ModScript\UniqueSpaceShips\___USE.txt
+.\ModScript\Small Projects\UniqueSpaceShips\___USE.txt
 .\ModScript\.git\___DONOTUSE.txt
 .\ModScript\.vscode\___DONOTUSE.txt
 .\ModScript\Craftable Upgrade Mods\CrafableUpgradeMods\___DONOTUSE.txt
@@ -44,6 +46,7 @@
 .\ModScript\Managed Mods\NoNebula\___DONOTUSE.txt
 .\ModScript\MergeTester\___DONOTUSE.txt
 .\ModScript\ModHelperScripts\___DONOTUSE.txt
+.\ModScript\Not Mine\___DONOTUSE.txt
 .\ModScript\ShipStore\___DONOTUSE.txt
 .\ModScript\ShipStoreV2\___DONOTUSE.txt
 .\ModScript\Small Projects\AddCustomConsumables\___DONOTUSE.txt

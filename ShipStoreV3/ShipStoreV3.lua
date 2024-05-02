@@ -288,6 +288,21 @@ function Create_New_Product(New_Product_ID, New_Product_Name, New_Product_Name_L
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
     {
         ["SEC_EDIT"] = New_Product_ID.."_PRODSEC",
+        ["SPECIAL_KEY_WORDS"] = {"Cost", "GcItemPriceModifiers.xml"},
+        ["VALUE_CHANGE_TABLE"] =
+        {
+            {"SpaceStationMarkup", "0"},
+            {"LowPriceMod", "0"},
+            {"LowPriceMod", "0"},
+            {"HighPriceMod", "0"},
+            {"BuyBaseMarkup", "0"},
+            {"BuyMarkupMod", "0"}
+        }
+    }
+
+    Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
+    {
+        ["SEC_EDIT"] = New_Product_ID.."_PRODSEC",
         ["SPECIAL_KEY_WORDS"] = {"Subtitle", "VariableSizeString.xml"},
         ["VALUE_CHANGE_TABLE"] =
         {

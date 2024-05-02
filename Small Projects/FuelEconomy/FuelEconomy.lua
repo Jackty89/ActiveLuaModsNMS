@@ -251,9 +251,9 @@ function Create_New_Recipe (Recipe_Id, Recipe_Type, Recipe_Name, Recipe_Time_To_
     Changes_To_Recipe_Table[#Changes_To_Recipe_Table + 1] =
     {
         ["SEC_EDIT"] = Recipe_Id.."_SEC",
-        ["SPECIAL_KEY_WORDS"] = {"Id", Recipe_Id },
-        ["PRECEDING_KEY_WORDS"] = { "Ingredients",},
-        ["SEC_ADD_NAMED"] =  Recipe_Id.."NEW_INGREDIENTS_MASER"
+        ["SPECIAL_KEY_WORDS"] = {"Id", Recipe_Id},
+        ["PRECEDING_KEY_WORDS"] = { "Ingredients"},
+        ["SEC_ADD_NAMED"] = Recipe_Id.."NEW_INGREDIENTS_MASER"
     }
     Changes_To_Recipe_Table[#Changes_To_Recipe_Table + 1] =
     {
