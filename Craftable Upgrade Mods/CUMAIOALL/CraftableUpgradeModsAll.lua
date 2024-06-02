@@ -554,12 +554,7 @@ function New_Languague_File(DescriptionEntries)
 end
 
 function New_Language_Entry(Language, Language_Text)
-    return
-    [[
-        <Property name="]]..Language..[[" value="VariableSizeString.xml">
-            <Property name="Value" value="]]..Language_Text..[[" />
-        </Property>
-    ]]
+    return [[<Property name="]]..Language..[[" value="]]..Language_Text..[[" />]]
 end
 
 function New_Language_File_Entry(Language_ID, Language_Entries)
@@ -651,18 +646,19 @@ function Create_New_Custom_Mod(Copy_Mod_ID, ModID, ModName, ModNameL,ModDeploysI
             {"ID", ModID},
             {"Name", ModName},
             {"NameLower", ModNameL},
+            {"Description", Crafted_Freighter_Mod_Descr_Id},
             {"DeploysInto", ModDeploysInto}
         }
     }
-    Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
-    {
-        ["SPECIAL_KEY_WORDS"] = {"Description", "VariableSizeString.xml"},
-        ["SEC_EDIT"] = ModID.."PRODSEC",
-        ["VALUE_CHANGE_TABLE"] =
-        {
-            {"Value", Crafted_Freighter_Mod_Descr_Id},
-        }
-    }
+    -- Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
+    -- {
+    --     -- ["SPECIAL_KEY_WORDS"] = {"Description", "VariableSizeString.xml"},
+    --     ["SEC_EDIT"] = ModID.."PRODSEC",
+    --     ["VALUE_CHANGE_TABLE"] =
+    --     {
+    --         {"Description", Crafted_Freighter_Mod_Descr_Id},
+    --     }
+    -- }
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
     {
         ["SEC_EDIT"] = "PRODUCT_SEC_MASTER",

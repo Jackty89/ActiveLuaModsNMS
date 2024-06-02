@@ -28,7 +28,7 @@ NMS_MOD_DEFINITION_CONTAINER =
                 {
                     ["MBIN_FILE_SOURCE"] = Product_Table_Path,
                     ["EXML_CHANGE_TABLE"] =
-                    {                    }
+                    {}
                 },
                 {
                     ["MBIN_FILE_SOURCE"] = Reward_Table_Path,
@@ -88,25 +88,9 @@ function Create_New_Starmap(New_Id)
             {"ID", New_Id},
             {"Name", "BUILDING_DISTRESSSIGNAL"},
             {"NameLower", "BUILDING_DISTRESSSIGNAL_L"},
-            {"RecipeCost", 1}
-        }
-    }
-    Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
-    {
-        ["SEC_EDIT"] = "STARCHART_COPY",
-        ["PRECEDING_KEY_WORDS"] = {"Subtitle"},
-        ["VALUE_CHANGE_TABLE"] =
-        {
-            {"Value", "UI_CORE_TUTORIAL1_MSG1C"}
-        }
-    }
-    Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
-    {
-        ["SEC_EDIT"] = "STARCHART_COPY",
-        ["PRECEDING_KEY_WORDS"] = {"Description"},
-        ["VALUE_CHANGE_TABLE"] =
-        {
-            {"Value", "UI_STARCHART_DESC_DISTRESS"}
+            {"RecipeCost", 1},
+            {"Subtitle", "UI_CORE_TUTORIAL1_MSG1C"},
+            {"Description", "UI_STARCHART_DESC_DISTRESS"}
         }
     }
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
@@ -115,7 +99,7 @@ function Create_New_Starmap(New_Id)
         ["SPECIAL_KEY_WORDS"] = {"Icon", "TkTextureResource.xml"},
         ["VALUE_CHANGE_TABLE"] =
         {
-            {"Filename", "TEXTURES/UI/FRONTEND/ICONS/U4PRODUCTS/PRODUCT.STARCHART.CRASHEDSHIP.DDS"}
+            {"Filename", "TEXTURES/UI/FRONTEND/ICONS/U4PRODUCTS/PRODUCT.STARCHART.SEASON9.DDS"}
         }
     }
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
@@ -142,7 +126,6 @@ function Create_Starmap_Reward(Reward_Id)
             {"LabelID", "Distress"}
         }
     }
-
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
         ["SPECIAL_KEY_WORDS"] = {"Id", "R_STARCHART_A"},

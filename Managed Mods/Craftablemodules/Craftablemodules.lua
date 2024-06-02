@@ -329,10 +329,9 @@ function ChangeProductDescriptionID()
             Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
             {
                 ["SPECIAL_KEY_WORDS"] = {"ID", ProductID },
-                ["PRECEDING_KEY_WORDS"] = {"Subtitle", "Description"},
                 ["VALUE_CHANGE_TABLE"] =
                 {
-                    {"Value", NewDescriptionID}
+                    {"Description", NewDescriptionID}
                 }
             }
         end
@@ -354,12 +353,7 @@ function NewLanguagueFile(DescriptionEntries)
 end
 
 function NewLanguageEntry(Language, NewDescription)
-    return
-    [[
-        <Property name="]]..Language..[[" value="VariableSizeString.xml">
-            <Property name="Value" value="]]..NewDescription..[[" />
-        </Property>
-    ]]
+    return [[<Property name="]]..Language..[[" value="]]..NewDescription..[[" />]]
 end
 
 function NewDescriptionText(newDescId, LanguageEntries)

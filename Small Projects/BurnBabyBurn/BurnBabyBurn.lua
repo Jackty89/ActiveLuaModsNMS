@@ -65,6 +65,7 @@ Input_Effect_Choice =
     ]]
 }
 Effect_Choice = GUIF(Input_Effect_Choice, 10)
+
 NMS_MOD_DEFINITION_CONTAINER =
 {
     ["MOD_FILENAME"] = Mod_Name..".pak",
@@ -163,7 +164,7 @@ NMS_MOD_DEFINITION_CONTAINER =
                             ["SPECIAL_KEY_WORDS"] = {"DefaultProjectile", "FLAMETHROW"},
                             ["VALUE_CHANGE_TABLE"] =
                             {
-                                {"DefaultProjectile", DefaultProjectile[1]}
+                                {"DefaultProjectile", DefaultProjectile[Effect_Choice]}
                             }
                         }
                     }

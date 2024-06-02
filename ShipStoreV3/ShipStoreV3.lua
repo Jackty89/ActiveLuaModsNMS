@@ -280,6 +280,10 @@ function Create_New_Product(New_Product_ID, New_Product_Name, New_Product_Name_L
             {"NameLower", New_Product_Name_Lc},
             {"BaseValue", New_Product_Value},
             {"StackMultiplier", New_Product_Stack_Size},
+            {"Subtitle", New_Product_Subtitle},
+            {"Description", New_Product_Description},
+
+
             -- IF i want to use the QS store
             -- {"GiveRewardOnSpecialPurchase", "R_"..New_Product_ID},
             -- {"Consumable", "False"}
@@ -299,25 +303,24 @@ function Create_New_Product(New_Product_ID, New_Product_Name, New_Product_Name_L
             {"BuyMarkupMod", "0"}
         }
     }
-
-    Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
-    {
-        ["SEC_EDIT"] = New_Product_ID.."_PRODSEC",
-        ["SPECIAL_KEY_WORDS"] = {"Subtitle", "VariableSizeString.xml"},
-        ["VALUE_CHANGE_TABLE"] =
-        {
-            {"Value", New_Product_Subtitle},
-        }
-    }
-    Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
-    {
-        ["SEC_EDIT"] = New_Product_ID.."_PRODSEC",
-        ["SPECIAL_KEY_WORDS"] = {"Description", "VariableSizeString.xml"},
-        ["VALUE_CHANGE_TABLE"] =
-        {
-            {"Value", New_Product_Description},
-        }
-    }
+    -- Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
+    -- {
+    --     ["SEC_EDIT"] = New_Product_ID.."_PRODSEC",
+    --     ["SPECIAL_KEY_WORDS"] = {"Subtitle", "VariableSizeString.xml"},
+    --     ["VALUE_CHANGE_TABLE"] =
+    --     {
+    --         {"Value", New_Product_Subtitle},
+    --     }
+    -- }
+    -- Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
+    -- {
+    --     ["SEC_EDIT"] = New_Product_ID.."_PRODSEC",
+    --     ["SPECIAL_KEY_WORDS"] = {"Description", "VariableSizeString.xml"},
+    --     ["VALUE_CHANGE_TABLE"] =
+    --     {
+    --         {"Value", New_Product_Description},
+    --     }
+    -- }
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
     {
         ["SEC_EDIT"] = New_Product_ID.."_PRODSEC",
@@ -850,12 +853,7 @@ function NewLanguagueFile(DescriptionEntries)
 end
 
 function NewLanguageEntry(Language, NewDescription)
-    return
-    [[
-        <Property name="]]..Language..[[" value="VariableSizeString.xml">
-            <Property name="Value" value="]]..NewDescription..[[" />
-        </Property>
-    ]]
+    return [[<Property name="]]..Language..[[" value="]]..NewDescription..[[" />]]
 end
 
 function NewDescriptionText(newDescId, LanguageEntries)
