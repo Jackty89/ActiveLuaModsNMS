@@ -1,6 +1,6 @@
 NMS_MOD_DEFINITION_CONTAINER =
 {
-    ["MOD_FILENAME"] = "Less UI.pak",
+    ["MOD_FILENAME"] = "LessUI.pak",
     ["MOD_DESCRIPTION"] = "Modifies the binoculars appearance",
     ["MOD_AUTHOR"] = "Methatronc",
     ["MODIFICATIONS"] =

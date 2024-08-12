@@ -1,6 +1,6 @@
 NMS_MOD_DEFINITION_CONTAINER = 
 {
-    ["MOD_FILENAME"] = "No Filters - Less UI.pak",
+    ["MOD_FILENAME"] = "NoFiltersAndLessUI.pak",
     ["MOD_DESCRIPTION"] = "Modifies the binoculars appearance",
     ["MOD_AUTHOR"] = "Methatronc",
     ["MODIFICATIONS"] =

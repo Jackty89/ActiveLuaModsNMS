@@ -3,7 +3,7 @@ Total_Seeds_Per_Class = 10000
 Input_Total_Seeds_Per_Class = {Total_Seeds_Per_Class,
 [[
     How many seeds do you wish to generate per Class-Type?
-    Default = 10000  Current = >> ]] .. Total_Seeds_Per_Class .. [[ <<
+    Default = >> ]] .. Total_Seeds_Per_Class .. [[ <<
 ]]}
 
 Languages =
@@ -29,13 +29,13 @@ Languages =
 
 Custom_Language_Desccription_Strings =
 {
-    {
-        ["ID"] = "CL_BFREIGH",
-        ["LANGUAGES"] =
-        {
-            {["LANGUAGE"] = Languages["EN"], ["NAME"] = "H.G. Corp. Freighter", ["DESCRIPTION"] = "H.G. Corp. Spacecraft Dynamics Freighter"}
-        }
-    },
+    -- {
+    --     ["ID"] = "CL_BFREIGH",
+    --     ["LANGUAGES"] =
+    --     {
+    --         {["LANGUAGE"] = Languages["EN"], ["NAME"] = "H.G. Corp. Freighter", ["DESCRIPTION"] = "H.G. Corp. Spacecraft Dynamics Freighter"}
+    --     }
+    -- },
     {
         ["ID"] = "CL_BHAUL",
         ["LANGUAGES"] =
@@ -125,7 +125,7 @@ Ship_Types =
     ["Sail"] = "Sail",
     ["Alien"] = "Alien",
     ["Robot"] = "Robot",
-    ["Freighter"] = "Freighter"
+    -- ["Freighter"] = "Freighter"
 }
 
 for Key, _Value in pairs(Ship_Types) do
@@ -658,6 +658,7 @@ function Get_Ship_Data(ship_type, ship_class )
     local price = 0;
     local base_price = 0
     local price_multiplier = 0
+    -- not good, only selects 1 speific model per class, need to be by seed basis
     -- local freighter_models =
     -- {
     --     "MODELS/COMMON/SPACECRAFT/INDUSTRIAL/CAPITALFREIGHTER_PROC.SCENE.MBIN",
@@ -666,7 +667,7 @@ function Get_Ship_Data(ship_type, ship_class )
     -- }
     -- local rand = math.random(1, #freighter_models)
 
-    -- if Ship_Type == "Freighter" then
+    -- if ship_type == "Freighter" then
     --     Ship_Model = freighter_models[rand]
     --     base_price = 25000000 * Price_Multiplier
     --     custom_language_string = "CL_BFREIGH"

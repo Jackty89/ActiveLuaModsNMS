@@ -118,7 +118,7 @@ Language_Data =
         {
             ["NAME"] = "Ship B-Class Upgrade Module",
             ["DESCRIPTION"] = "This ship module created by the engineers of H.G. Corp. will let you upgrade your ship's class.",
-            ["SUBTITLE"] = "hip B-Class Upgrade Module"
+            ["SUBTITLE"] = "Ship B-Class Upgrade Module"
         },
         ["CL_UPSHIPA"] =
         {

@@ -9,7 +9,7 @@ PATHS = {
 NMS_MOD_DEFINITION_CONTAINER =
 {
     ["MOD_FILENAME"] = ModeName..".pak",
-    ["MOD_DESCRIPTION"] = "Rework of all Spaceships and their bonuses and price",
+    ["MOD_DESCRIPTION"] = "quiet down",
     ["MOD_AUTHOR"] = Author,
     ["MODIFICATIONS"] =
     {
