@@ -136,7 +136,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "HEALTH_PACK"
+        ["LANGUAGE_BASE"] = "HEALTH_PACK"
     },
     {
         ["PRODUCT_ID"] = "SHIELD_PACK",
@@ -167,7 +167,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "SHIELD_PACK"
+        ["LANGUAGE_BASE"] = "SHIELD_PACK"
     },
     {
         ["PRODUCT_ID"] = "JET_BOOST_PACK",
@@ -197,7 +197,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "JET_BOOST_PACK"
+        ["LANGUAGE_BASE"] = "JET_BOOST_PACK"
     },
     {
         ["PRODUCT_ID"] = "HAZARD_PACK",
@@ -228,7 +228,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "HAZARD_PACK"
+        ["LANGUAGE_BASE"] = "HAZARD_PACK"
     },
     {
         ["PRODUCT_ID"] = "ENERGY_PACK",
@@ -258,7 +258,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "ENERGY_PACK"
+        ["LANGUAGE_BASE"] = "ENERGY_PACK"
     },
 }
 
@@ -685,7 +685,7 @@ function Start()
         Product_Icon = Custom_Products[i]["ICON"]
         Product_Reward_data = Custom_Products[i]["REWARD_DATA"]
         Product_Add_To_Store = Custom_Products[i]["ADD_TO_STORE"]
-        Product_Langauge_Base = Custom_Products[i]["LANUAGE_BASE"]
+        Product_Langauge_Base = Custom_Products[i]["LANGUAGE_BASE"]
 
         Product_Name_Id = string.upper(Product_Langauge_Base).."_NAME"
         Product_Name_LC_Id = Product_Langauge_Base.."_NAME_LC"
