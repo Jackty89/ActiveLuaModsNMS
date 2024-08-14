@@ -268,7 +268,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "CL_UPWEAP"
+        ["LANGUAGE_BASE"] = "CL_UPWEAP"
     },
     {
         ["PRODUCT_ID"] = "UP_SHIP_B",
@@ -292,7 +292,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "CL_UPSHIPB"
+        ["LANGUAGE_BASE"] = "CL_UPSHIPB"
     },
     {
         ["PRODUCT_ID"] = "UP_SHIP_A",
@@ -316,7 +316,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "CL_UPSHIPA"
+        ["LANGUAGE_BASE"] = "CL_UPSHIPA"
     },
     {
         ["PRODUCT_ID"] = "UP_SHIP_S",
@@ -340,7 +340,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "CL_UPSHIPS"
+        ["LANGUAGE_BASE"] = "CL_UPSHIPS"
     },
     {
         ["PRODUCT_ID"] = "UP_INV_SHIP",
@@ -367,7 +367,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "CL_UPINVSHIP"
+        ["LANGUAGE_BASE"] = "CL_UPINVSHIP"
     },
     {
         ["PRODUCT_ID"] = "UP_INV_SUIT",
@@ -394,7 +394,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "CL_UPINVSUIT"
+        ["LANGUAGE_BASE"] = "CL_UPINVSUIT"
     },
     {
         ["PRODUCT_ID"] = "UP_INV_WEAP",
@@ -421,7 +421,7 @@ Custom_Products =
                 }
             }
         },
-        ["LANUAGE_BASE"] = "CL_UPINVWEAP"
+        ["LANGUAGE_BASE"] = "CL_UPINVWEAP"
     }
 }
 
@@ -759,7 +759,7 @@ function Start()
         Product_Icon = Custom_Products[i]["ICON"]
         Product_Reward_data = Custom_Products[i]["REWARD_DATA"]
         Product_Add_To_Store = Custom_Products[i]["ADD_TO_STORE"]
-        Product_Langauge_Base = Custom_Products[i]["LANUAGE_BASE"]
+        Product_Langauge_Base = Custom_Products[i]["LANGUAGE_BASE"]
 
         Product_Name_Id = string.upper(Product_Langauge_Base).."_NAME"
         Product_Name_LC_Id = Product_Langauge_Base.."_NAME_LC"
