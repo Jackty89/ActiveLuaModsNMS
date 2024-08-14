@@ -61,7 +61,7 @@ local Manual_Item_Tree_Additions =
     },
     {
         Technology_Id = 'UT_INFRA_BLAS',
-        Unlockable_root = 'SHIPMINIGUN'
+        Unlockable_root = 'UT_SHIPMINI'
     },
     {
         Technology_Id = 'UT_HYPER_BEYOND',
@@ -199,9 +199,9 @@ local Language_Data =
         },
         ROCK_TECH1 =
         {
-            NAME = 'Large Rocket Tubes',
+            NAME = 'Extended Rocket Tubes',
             DESCRIPTION = 'This new technology upgrade engineered by the engineers at H.G. Corp. will increase the capacity on your rocket tubes.',
-            SUBTITLE = 'Large Missle Tubes'
+            SUBTITLE = 'Extended Rocket Tubes'
         },
         ROCK_TECH2 =
         {
@@ -1483,7 +1483,6 @@ local Custom_Procedural_Mods =
         }
     }
 }
-
 ----------------------------------------------------------------------------------------------
 -------------------------------     Requirements DATA     ------------------------------------
 ----------------------------------------------------------------------------------------------
@@ -1622,19 +1621,19 @@ local Unlockable_Item_Trees =
 -------------------------------     USER INPUT     -------------------------------------------
 ----------------------------------------------------------------------------------------------
 local Class_Choice = 1
--- local Input_Class_Choice =
--- {
---     Class_Choice,
---     [[
---         What class range do you wish?
---         * 1 = C -> S
---         * 2 = B -> S
---         * 3 = A -> S
---         * 4 = S
---         Default = 1 | Current = >> ]] .. Class_Choice .. [[ <<
---     ]]
--- }
--- Class_Choice = GUIF(Input_Class_Choice, 10)
+local Input_Class_Choice =
+{
+    Class_Choice,
+    [[
+        What class range do you wish?
+        * 1 = C -> S
+        * 2 = B -> S
+        * 3 = A -> S
+        * 4 = S
+        Default = 1 | Current = >> ]] .. Class_Choice .. [[ <<
+    ]]
+}
+Class_Choice = GUIF(Input_Class_Choice, 10)
 ----------------------------------------------------------------------------------------------
 -------------------------------     CODE LOGIC START      ------------------------------------
 ----------------------------------------------------------------------------------------------
@@ -2114,7 +2113,17 @@ end
 
 function Create_New_Pocedural_Technology_Products()
     for ID_Base, data in pairs(Custom_Procedural_Mods) do
-        for i = data.Lowest_Class_No, data.Highest_Class_No do
+
+        local Lowest_Class_No = data.Lowest_Class_No
+        local Highest_Class_No = data.Highest_Class_No
+        if tonumber(Lowest_Class_No) < Class_Choice then
+            Lowest_Class_No = Class_Choice
+        end
+        if tonumber(Highest_Class_No) < Class_Choice then
+            Lowest_Class_No = Highest_Class_No
+        end
+
+        for i = Lowest_Class_No, Highest_Class_No do
             local Product_Id = 'UC_'..ID_Base..i
             local Class = Classes[i]
             local Base_For_Multiplier = i
