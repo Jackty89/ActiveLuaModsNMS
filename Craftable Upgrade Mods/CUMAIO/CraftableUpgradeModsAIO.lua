@@ -382,7 +382,8 @@ Special_Mods =
             {["ID_BASE"] = "ROGUE_CLASSBOX", ["NO_OF_UPGRADES"] = "", ["START_NO"] = ""},
             {["ID_BASE"] = "ROGUE_CARBOX", ["NO_OF_UPGRADES"] = "", ["START_NO"] = ""},
             {["ID_BASE"] = "ROGUE_HAZBOX", ["NO_OF_UPGRADES"] = "", ["START_NO"] = ""},
-            {["ID_BASE"] = "ROGUE_STARTBOX", ["NO_OF_UPGRADES"] = "", ["START_NO"] = ""}
+            {["ID_BASE"] = "ROGUE_STARTBOX", ["NO_OF_UPGRADES"] = "", ["START_NO"] = ""},
+            {["ID_BASE"] = "ROGUE_INVBOX", ["NO_OF_UPGRADES"] = "", ["START_NO"] = ""}
         }
     }
 }
