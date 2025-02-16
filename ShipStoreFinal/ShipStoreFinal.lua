@@ -451,7 +451,7 @@ function Create_Ship_Reward_Entry_Template()
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
         SPECIAL_KEY_WORDS = {"Id", "R_SWIT_SHIP01"},
-        PRECEDING_KEY_WORDS = {"List", "List", "GcRewardTableItem.xml"},
+        PRECEDING_KEY_WORDS = {"List", "List", "GcRewardTableItem"},
         SEC_SAVE_TO = "COPY_SHIP_ENTRY_SEC"
     }
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
@@ -465,7 +465,7 @@ function Create_Ship_Reward_Entry_Template()
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
         SEC_EDIT = "COPY_SHIP_ENTRY_SEC",
-        PRECEDING_KEY_WORDS = {"GcInventoryElement.xml"},
+        PRECEDING_KEY_WORDS = {"GcInventoryElement"},
         REPLACE_TYPE = "ALL",
         REMOVE = "SECTION"
     }
@@ -484,7 +484,7 @@ function Create_Technology_Template(template_name, technology_id, technology_amo
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
         SPECIAL_KEY_WORDS = {"Id", "R_SWIT_SHIP01"},
-        PRECEDING_KEY_WORDS = {"ShipInventory", "Slots", "GcInventoryElement.xml"},
+        PRECEDING_KEY_WORDS = {"ShipInventory", "Slots", "GcInventoryElement"},
         SEC_SAVE_TO = template_name
     }
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
@@ -540,7 +540,7 @@ function Create_Ship_Type_Reward_Template(ship_type_template_name, ship_type, sh
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
         SEC_EDIT = ship_type_template_name,
-        SPECIAL_KEY_WORDS = {"ShipResource", "GcResourceElement.xml"},
+        SPECIAL_KEY_WORDS = {"ShipResource", "GcResourceElement"},
         VALUE_CHANGE_TABLE =
         {
             {"Filename", ship_model}
@@ -679,7 +679,7 @@ function Create_New_Product(product_id, product_name, product_name_lc, product_s
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
     {
         SEC_EDIT = product_id.."_PRODSEC",
-        SPECIAL_KEY_WORDS = {"Cost", "GcItemPriceModifiers.xml"},
+        SPECIAL_KEY_WORDS = {"Cost", "GcItemPriceModifiers"},
         VALUE_CHANGE_TABLE =
         {
             {"SpaceStationMarkup", "0"},
@@ -693,7 +693,7 @@ function Create_New_Product(product_id, product_name, product_name_lc, product_s
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
     {
         SEC_EDIT = product_id.."_PRODSEC",
-        SPECIAL_KEY_WORDS = {"Icon", "TkTextureResource.xml"},
+        SPECIAL_KEY_WORDS = {"Icon", "TkTextureResource"},
         VALUE_CHANGE_TABLE =
         {
             {"Filename", product_icon},
@@ -702,7 +702,7 @@ function Create_New_Product(product_id, product_name, product_name_lc, product_s
     Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
     {
         SEC_EDIT = product_id.."_PRODSEC",
-        SPECIAL_KEY_WORDS = {"HeroIcon", "TkTextureResource.xml"},
+        SPECIAL_KEY_WORDS = {"HeroIcon", "TkTextureResource"},
         VALUE_CHANGE_TABLE =
         {
             {"Filename", product_icon},
@@ -750,7 +750,7 @@ function Create_Reward_Table_Entry_Template()
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
         SEC_EDIT = "REWARD_ENTRY_SEC",
-        PRECEDING_KEY_WORDS = { "GcRewardTableItem.xml"},
+        SPECIAL_KEY_WORDS = {"List", "GcRewardTableItem"},
         REPLACE_TYPE = "ALL",
         REMOVE = "SECTION"
     }
@@ -920,7 +920,7 @@ function Start()
                 local template_selected_index = math.random(#class_data.TEMPLATES)
                 local reward_sec = ship_type..'_'..count..'_REWARD_SEC'
                 local template_name = class_data.TEMPLATES[template_selected_index]
-
+                -- USE FUNC to solve this?
                 Create_Ship_Reward_Entry(reward_sec, template_name, ship_seed, ship_slots)
             end
             Create_Reward_Table_Entry(reward_id, "Select")
@@ -934,10 +934,10 @@ end
 -------------------------------     Language file creation     -------------------------------
 ----------------------------------------------------------------------------------------------
 local Changes_To_Mbin_Change_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE
-function Create_Langauge_Masters()
+function Create_Language_Masters()
     Changes_To_Language[#Changes_To_Language + 1] =
     {
-        PRECEDING_KEY_WORDS = {'TkLocalisationEntry.xml'},
+        SPECIAL_KEY_WORDS = {'Table', 'TkLocalisationEntry'},
         SEC_SAVE_TO = 'EMPTY_LOCAL_ENTRY_MASTER'
     }
     Changes_To_Language[#Changes_To_Language + 1] =
@@ -946,7 +946,7 @@ function Create_Langauge_Masters()
         VALUE_CHANGE_TABLE =
         {
             {'English', ''}
-        }
+        },
     }
 end
 
@@ -964,22 +964,31 @@ function New_Empty_Language_File(New_Language_File_Name)
         EXML_CHANGE_TABLE =
         {
             {
-                PRECEDING_KEY_WORDS = {'Table'},
-                REMOVE = 'SECTION'
+                -- PRECEDING_KEY_WORDS = {'Table',},
+                SPECIAL_KEY_WORDS = {'Table', 'TkLocalisationEntry'},
+                -- REPLACE_TYPE = "ALLINSECTION",
+                REPLACE_TYPE = "ALL",
+                REMOVE = 'SECTION',
             }
         }
     }
-    Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
-    {
-        MBIN_FILE_SOURCE = New_Language_File_Name,
-        EXML_CHANGE_TABLE =
-        {
-            {
-                LINE_OFFSET = {3},
-                ADD = [[<Property name="Table"></Property>]]
-            }
-        }
-    }
+    -- Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
+    -- {
+    --     MBIN_FILE_SOURCE = New_Language_File_Name,
+    --     EXML_CHANGE_TABLE =
+    --     {
+    --         {
+    --             LINE_OFFSET = "3",
+    --             -- needs to be " quotes
+    --             -- 2 spaces == 1 tab in MXML
+    --             ADD = [[  <Property name="Table">]]
+    --         },
+    --         {
+    --             LINE_OFFSET = "4",
+    --             ADD = [[  </Property>]]
+    --         }
+    --     }
+    -- }
 end
 
 function New_Empty_Langauge_Entries(Language)
@@ -1078,7 +1087,7 @@ function Fill_Custom_Language_File(Language, Language_Values)
 end
 
 function Add_Custom_Language_String()
-    Create_Langauge_Masters()
+    Create_Language_Masters()
     for Language , Language_Values in pairs(Language_Data) do
         New_Language_File_Name = 'LANGUAGE/NMS_'..string.upper(Custom_Language_Tag)..'_'..string.upper(Language)..'.MBIN'
         New_Empty_Language_File(New_Language_File_Name)
@@ -1099,5 +1108,8 @@ function Add_Custom_Language_String()
     end
 end
 
+----------------------------------------------------------------------------------------------
+-------------------------------     EXECUTING THE FUNCTIONS     ------------------------------
+----------------------------------------------------------------------------------------------
 Start()
-Add_Custom_Language_String()
+-- Add_Custom_Language_String()

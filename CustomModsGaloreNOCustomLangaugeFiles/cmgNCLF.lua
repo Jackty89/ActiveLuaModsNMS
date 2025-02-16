@@ -1268,7 +1268,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             GRENFUEL1 = {Type = 'Product', Amount = 3},
-            FUEL2 = {Type = 'Substance', Amount = 60},
+            FUEL2 = {Type = 'Product', Amount = 60},
             TECH_COMP = {Type = 'Product', Amount = 2}
         }
     },
@@ -1747,7 +1747,6 @@ NMS_MOD_DEFINITION_CONTAINER =
     MOD_FILENAME = Mode_Name,
     MOD_DESCRIPTION = 'Custom mods',
     MOD_AUTHOR = Author,
-    -- ADD_FILES = {},
     MODIFICATIONS =
     {
         {
@@ -2117,6 +2116,7 @@ function Create_Shop_Entry(entry_ID, trade_setting)
         SEC_EDIT = 'SHOP_'..string.upper(trade_setting)..'_MASTER_SEC',
         -- SEC_ADD_NAMED = 'SHOP_ENTRY'
         ADD = [[<Property name="AlwaysPresentProducts" value="]]..entry_ID..[[" />]]
+
     }
 end
 ----------------------------------------------------------------------------------------------
@@ -2445,44 +2445,6 @@ function Create_Language_Masters()
     }
 end
 
-function New_Empty_Language_File(New_Language_File_Name)
-    Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
-    {
-        MBIN_FILE_SOURCE =
-        {
-            {'LANGUAGE/NMS_LOC8_ENGLISH.MBIN', New_Language_File_Name}
-        }
-    }
-    Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
-    {
-        MBIN_FILE_SOURCE= New_Language_File_Name,
-        EXML_CHANGE_TABLE =
-        {
-            {
-                PRECEDING_KEY_WORDS = {'Table'},
-                REMOVE = 'SECTION'
-            }
-        }
-    }
-    Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
-    {
-        MBIN_FILE_SOURCE = New_Language_File_Name,
-        EXML_CHANGE_TABLE =
-        {
-            {
-                LINE_OFFSET = "3",
-                -- needs to be " quotes
-                -- 2 spaces == 1 tab in MXML
-                ADD = [[  <Property name="Table">]]
-            },
-            {
-                LINE_OFFSET = "4",
-                ADD = [[  </Property>]]
-            }
-        }
-    }
-end
-
 function New_Empty_Langauge_Entries(Language)
     Changes_To_Language[#Changes_To_Language + 1] =
     {
@@ -2581,14 +2543,13 @@ end
 function Add_Custom_Language_String()
     Create_Language_Masters()
     for Language , Language_Values in pairs(Language_Data) do
-        New_Language_File_Name = 'LANGUAGE/NMS_'..string.upper(Custom_Language_Tag)..'_'..string.upper(Language)..'.MBIN'
-        New_Empty_Language_File(New_Language_File_Name)
+        local Langauge_file = "LANGUAGE/NMS_LOC8_"..string.upper(Language)..".MBIN"
         New_Empty_Langauge_Entries(Language)
         Fill_Custom_Language_File(Language, Language_Values)
 
         Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
         {
-            MBIN_FILE_SOURCE = New_Language_File_Name,
+            MBIN_FILE_SOURCE = Langauge_file,
             EXML_CHANGE_TABLE =
             {
                 {
@@ -2602,6 +2563,8 @@ end
 ----------------------------------------------------------------------------------------------
 -------------------------------     EXECUTING THE FUNCTIONS     ------------------------------
 ----------------------------------------------------------------------------------------------
+Add_Custom_Language_String()
+
 Create_Masters_Sec()
 Create_Class_Requirements()
 
@@ -2613,5 +2576,3 @@ Add_Technologies_To_Item_Trees()
 Edit_Existing_Technology_Stats()
 
 Add_Masters_Sec()
-
-Add_Custom_Language_String()

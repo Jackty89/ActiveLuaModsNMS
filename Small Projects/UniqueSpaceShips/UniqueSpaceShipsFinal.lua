@@ -238,31 +238,31 @@ end
 
 NMS_MOD_DEFINITION_CONTAINER =
 {
-    ["MOD_FILENAME"] = ModeName..".pak",
-    ["MOD_DESCRIPTION"] = "Rework of all Spaceships and their bonuses and price",
-    ["MOD_AUTHOR"] = Author,
-    ["MODIFICATIONS"] =
+    MOD_FILENAME = ModeName,
+    MOD_DESCRIPTION = "Rework of all Spaceships and their bonuses and price",
+    MOD_AUTHOR = Author,
+    MODIFICATIONS =
     {
         {
-            ["MBIN_CHANGE_TABLE"] =
+            MBIN_CHANGE_TABLE =
             {
                 {
-                    ["MBIN_FILE_SOURCE"] = SpaceShipGlobalsPath, 
-                    ["EXML_CHANGE_TABLE"] =
+                    MBIN_FILE_SOURCE = SpaceShipGlobalsPath,
+                    EXML_CHANGE_TABLE =
                     {
                         {
                             --Reduce launch cost for Shuttle
-                            ["MATH_OPERATION"] = "*",
-                            ["VALUE_CHANGE_TABLE"] =
+                            MATH_OPERATION = "*",
+                            VALUE_CHANGE_TABLE =
                             {
                                 {"ShuttleTakeOffMod", ShuttleTakeOffReductionMultiplier} -- Original 0.66 => 25% * 0.66 = 16.5% launch cost - Mod 25% * 0.10 = 2.5%
                             }
                         }
                     }
-                }, 
+                },
                 {
-                    ["MBIN_FILE_SOURCE"] = InventoryTablePath,
-                    ["EXML_CHANGE_TABLE"] =
+                    MBIN_FILE_SOURCE = InventoryTablePath,
+                    EXML_CHANGE_TABLE =
                     {
                     }
                 }
@@ -271,19 +271,19 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local Changes_To_Inventory_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][2]["EXML_CHANGE_TABLE"]
+local Changes_To_Inventory_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
 function Change_Properties()
     for property_stat, values_per_class in pairs(Property_Changes) do
         for class, ship_stats_per_class in pairs(values_per_class) do
             for ship_type, property_multiplier_value in pairs(ship_stats_per_class) do
                 Changes_To_Inventory_Table[#Changes_To_Inventory_Table +1] =
                 {
-                    ["PRECEDING_FIRST"] = "TRUE",
-                    ["MATH_OPERATION"] = "*",
-                    ["INTEGER_TO_FLOAT"] = "FORCE",
-                    ["PRECEDING_KEY_WORDS"] = {"ShipBaseStatsData", ship_type, "BaseStatsPerClass", class},
-                    ["SPECIAL_KEY_WORDS"] = {"BaseStatID", property_stat},
-                    ["VALUE_CHANGE_TABLE"] =
+                    PRECEDING_FIRST = "TRUE",
+                    MATH_OPERATION = "*",
+                    INTEGER_TO_FLOAT = "FORCE",
+                    PRECEDING_KEY_WORDS = {"ShipBaseStatsData", ship_type, "BaseStatsPerClass", class},
+                    SPECIAL_KEY_WORDS = {"BaseStatID", property_stat},
+                    VALUE_CHANGE_TABLE =
                     {
                         {"Min", property_multiplier_value},
                         {"Max", property_multiplier_value}

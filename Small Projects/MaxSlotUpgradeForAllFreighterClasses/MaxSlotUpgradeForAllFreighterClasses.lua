@@ -1,4 +1,4 @@
-ModName = "MaxUpgradeFreighterSlotAllClasses"
+ModName = "MaxSlotUpgradeForAllFreighterClasses"
 Author = "Jackty89"
 
 InventoryTablePath = "METADATA/REALITY/TABLES/INVENTORYTABLE.MBIN"
@@ -22,17 +22,17 @@ FreighterSizes = {
 
 NMS_MOD_DEFINITION_CONTAINER =
 {
-    ["MOD_FILENAME"] = ModName.. ".pak",
-    ["MOD_DESCRIPTION"] = ModName,
-    ["MOD_AUTHOR"] = Author,
-    ["MODIFICATIONS"] =
+    MOD_FILENAME = ModName,
+    MOD_DESCRIPTION = ModName,
+    MOD_AUTHOR = Author,
+    MODIFICATIONS =
     {
         {
-            ["MBIN_CHANGE_TABLE"] =
+            MBIN_CHANGE_TABLE =
             {
                 {
-                    ["MBIN_FILE_SOURCE"] = InventoryTablePath,
-                    ["EXML_CHANGE_TABLE"] =
+                    MBIN_FILE_SOURCE = InventoryTablePath,
+                    EXML_CHANGE_TABLE =
                     {
                     }
                 }
@@ -41,14 +41,14 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local ChangesToInventoryTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
+local ChangesToInventoryTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
 
 function EditInventory(type, maxSlot)
     if maxSlot then
         ChangesToInventoryTable[#ChangesToInventoryTable + 1] =
         {
-            ["SPECIAL_KEY_WORDS"] = {type, "GcInventoryLayoutGenerationDataEntry.xml"},
-            ["VALUE_CHANGE_TABLE"] =
+            SPECIAL_KEY_WORDS = {type, "GcInventoryLayoutGenerationDataEntry"},
+            VALUE_CHANGE_TABLE =
             {
                 {"MinSlots", MaxInventory},
                 {"MaxSlots", MaxInventory},
@@ -60,8 +60,8 @@ function EditInventory(type, maxSlot)
 
     ChangesToInventoryTable[#ChangesToInventoryTable + 1] =
     {
-        ["SPECIAL_KEY_WORDS"] = {type, "GcInventoryLayoutGenerationDataEntry.xml", "Bounds", "GcInventoryLayoutGenerationBounds.xml"},
-        ["VALUE_CHANGE_TABLE"] =
+        SPECIAL_KEY_WORDS = {type, "GcInventoryLayoutGenerationDataEntry", "Bounds", "GcInventoryLayoutGenerationBounds"},
+        VALUE_CHANGE_TABLE =
         {
             {"MaxWidthSmall", InventoryWidth},
             {"MaxHeightSmall", InventoryHeight},
@@ -74,8 +74,8 @@ function EditInventory(type, maxSlot)
 
     ChangesToInventoryTable[#ChangesToInventoryTable + 1] =
     {
-        ["SPECIAL_KEY_WORDS"] = {type, "GcInventoryLayoutGenerationDataEntry.xml", "TechBounds", "GcInventoryLayoutGenerationBounds.xml"},
-        ["VALUE_CHANGE_TABLE"] =
+        SPECIAL_KEY_WORDS = {type, "GcInventoryLayoutGenerationDataEntry", "TechBounds", "GcInventoryLayoutGenerationBounds"},
+        VALUE_CHANGE_TABLE =
         {
             {"MaxWidthSmall", TechWidth},
             {"MaxHeightSmall", TechHeight},
@@ -90,8 +90,8 @@ end
 function ImproveClassSlotLimit(type)
     ChangesToInventoryTable[#ChangesToInventoryTable + 1] =
     {
-        ["PRECEDING_KEY_WORDS "] = {"ShipInventoryMaxUpgradeSize", type, "MaxInventoryCapacity"},
-        ["VALUE_CHANGE_TABLE"] =
+        PRECEDING_KEY_WORDS  = {"ShipInventoryMaxUpgradeSize", type, "MaxInventoryCapacity"},
+        VALUE_CHANGE_TABLE =
         {
             {"C", MaxInventory},
             {"B", MaxInventory},
@@ -102,8 +102,8 @@ function ImproveClassSlotLimit(type)
 
     ChangesToInventoryTable[#ChangesToInventoryTable + 1] =
     {
-        ["PRECEDING_KEY_WORDS "] = {"ShipInventoryMaxUpgradeSize", type, "MaxTechInventoryCapacity"},
-        ["VALUE_CHANGE_TABLE"] =
+        PRECEDING_KEY_WORDS  = {"ShipInventoryMaxUpgradeSize", type, "MaxTechInventoryCapacity"},
+        VALUE_CHANGE_TABLE =
         {
             {"C", MaxTech},
             {"B", MaxTech},

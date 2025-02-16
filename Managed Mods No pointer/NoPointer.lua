@@ -3,7 +3,7 @@ Author = "Jackty89"
 
 NMS_MOD_DEFINITION_CONTAINER =
 {
-    ["MOD_FILENAME"] = ModeName..".pak",
+    ["MOD_FILENAME"] = ModeName,
     ["MOD_DESCRIPTION"] = ModeName,
     ["MOD_AUTHOR"] = Author,
     ["MODIFICATIONS"] =
