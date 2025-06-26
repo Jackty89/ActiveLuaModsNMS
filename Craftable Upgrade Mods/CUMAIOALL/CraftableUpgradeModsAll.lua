@@ -1196,34 +1196,34 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = Product_Table_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Unlockable_Item_Trees_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Consumeable_Item_Table_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Reward_Table_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = English_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 }
             }
         }
     }
 }
 
-local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
-local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
-local Changes_To_Consumable_Item_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].EXML_CHANGE_TABLE
-local Changes_To_Reward_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[4].EXML_CHANGE_TABLE
-local Changes_To_Language = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[5].EXML_CHANGE_TABLE
+local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
+local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].MXML_CHANGE_TABLE
+local Changes_To_Consumable_Item_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].MXML_CHANGE_TABLE
+local Changes_To_Reward_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[4].MXML_CHANGE_TABLE
+local Changes_To_Language = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[5].MXML_CHANGE_TABLE
 
 
 function Create_New_Product(Product_Id, Product_Name_Id, Product_Name_LC_Id, Product_Subtitle_Id, Product_Description_Id,
@@ -1899,7 +1899,7 @@ function Add_Custom_Language_Strings()
         Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
         {
             MBIN_FILE_SOURCE = Langauge_file,
-            EXML_CHANGE_TABLE =
+            MXML_CHANGE_TABLE =
             {
                 {
                     PRECEDING_KEY_WORDS = {"Table"},

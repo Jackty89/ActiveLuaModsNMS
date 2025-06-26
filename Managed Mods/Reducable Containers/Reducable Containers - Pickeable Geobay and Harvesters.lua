@@ -1,5 +1,5 @@
 local ContainerID = {"CONTAINER0","CONTAINER1","CONTAINER2","CONTAINER3","CONTAINER4","CONTAINER5","CONTAINER6","CONTAINER7","CONTAINER8","CONTAINER9"}
-local GarageID = {"GARAGE_B","GARAGE_S","GARAGE_M","GARAGE_L","GARAGE_MECH","GARAGE_SUB"}
+local GarageID = {"GARAGE_B","GARAGE_S","GARAGE_M","GARAGE_L","GARAGE_MECH","GARAGE_SUB", "GARAGE_FLOAT"}
 
 NMS_MOD_DEFINITION_CONTAINER =
 {
@@ -12,7 +12,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/TABLES/BASEBUILDINGOBJECTSTABLE.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             PRECEDING_KEY_WORDS = "",
@@ -46,7 +46,7 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local Change_Table_Ref = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
+local Change_Table_Ref = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
 function Edit_containers()
     for i=1,#ContainerID do
         local value = ContainerID[i]

@@ -23,7 +23,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = GCTechnologyTablePath,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             --this is in base game now leaving it in case HG changes it
@@ -69,7 +69,7 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local ChangesToTechnologyTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
+local ChangesToTechnologyTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
 if ExtraChanges then
     ChangesToTechnologyTable[#ChangesToTechnologyTable +1] =
     {

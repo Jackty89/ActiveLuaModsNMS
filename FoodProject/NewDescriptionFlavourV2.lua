@@ -80,13 +80,13 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     ["MBIN_FILE_SOURCE"]     = "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
-                    ["EXML_CHANGE_TABLE"]     =
+                    ["MXML_CHANGE_TABLE"]     =
                     {
                     }
                 },
                 {
                     ["MBIN_FILE_SOURCE"]     = "GCDEBUGOPTIONS.GLOBAL.MBIN",
-                    ["EXML_CHANGE_TABLE"] =
+                    ["MXML_CHANGE_TABLE"] =
                     {
                         {
                             ["PRECEDING_KEY_WORDS"] = {"LocTableList"},
@@ -166,7 +166,7 @@ for _Key , Language in pairs(Languages) do
 end
 
 --This loop changes the description ID in producttbale
-local ChangeDescriptionID = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
+local ChangeDescriptionID = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["MXML_CHANGE_TABLE"]
 for i = 1, #ChangeDescIDandDescriptionForProductsArray do
     local NewDescriptionID = ChangeDescIDandDescriptionForProductsArray[i][2]
 

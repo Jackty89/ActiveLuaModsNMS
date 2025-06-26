@@ -121,7 +121,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = VehicleGlobalsPath,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             VALUE_CHANGE_TABLE =
@@ -140,7 +140,7 @@ NMS_MOD_DEFINITION_CONTAINER =
                 },
                 {
                     MBIN_FILE_SOURCE = GCTechnologyTablePath,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             SPECIAL_KEY_WORDS = {"ID","MECH_LASER"},
@@ -160,7 +160,7 @@ NMS_MOD_DEFINITION_CONTAINER =
                 },
                 {
                     MBIN_FILE_SOURCE = InventoryTablePath,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 }
@@ -169,7 +169,7 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local vehicleChanges = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
+local vehicleChanges = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
 for i = 1, #ExoCraftsNewValues do
     if ExoCraftsNewValues[i].ID == "SUBMARINE" then
         vehicleChanges[#vehicleChanges + 1] = {
@@ -203,7 +203,7 @@ for i = 1, #ExoCraftsNewValues do
     end
 end
 
-local ChangesToInventoryTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].EXML_CHANGE_TABLE
+local ChangesToInventoryTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].MXML_CHANGE_TABLE
 function EditInventory(type, maxSlot)
     if maxSlot then
         ChangesToInventoryTable[#ChangesToInventoryTable + 1] =

@@ -73,13 +73,13 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = Unlockable_Item_Trees_Path,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = Technology_Table_Path,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             SPECIAL_KEY_WORDS = {'ID', 'FLAME'},
@@ -153,7 +153,7 @@ NMS_MOD_DEFINITION_CONTAINER =
                 },
                 {
                     MBIN_FILE_SOURCE = Player_Weapon_Properties_Table_Path,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             SPECIAL_KEY_WORDS = {'DefaultProjectile', 'FLAMETHROW'},
@@ -169,8 +169,8 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
-local Changes_To_Technology_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
+local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
+local Changes_To_Technology_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].MXML_CHANGE_TABLE
 
 function Add_Flame_Thrower()
     Changes_To_Unlockable_Item_Trees[#Changes_To_Unlockable_Item_Trees + 1] =

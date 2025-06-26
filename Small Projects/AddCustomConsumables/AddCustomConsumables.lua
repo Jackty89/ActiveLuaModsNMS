@@ -147,31 +147,31 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     ["MBIN_FILE_SOURCE"] = "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
-                    ["EXML_CHANGE_TABLE"] =
+                    ["MXML_CHANGE_TABLE"] =
                     {
                     }
                 },
                 {
                     ["MBIN_FILE_SOURCE"] = "METADATA/REALITY/TABLES/CONSUMABLEITEMTABLE.MBIN",
-                    ["EXML_CHANGE_TABLE"] =
+                    ["MXML_CHANGE_TABLE"] =
                     {
                     }
                 },
                 {
                     ["MBIN_FILE_SOURCE"] = "METADATA/REALITY/TABLES/REWARDTABLE.MBIN",
-                    ["EXML_CHANGE_TABLE"] =
+                    ["MXML_CHANGE_TABLE"] =
                     {
                     }
                 },
                 {
                     ["MBIN_FILE_SOURCE"] = "METADATA/GAMESTATE/DEFAULTSAVEDATA.MBIN",
-                    ["EXML_CHANGE_TABLE"] =
+                    ["MXML_CHANGE_TABLE"] =
                     {
                     }
                 },
                 {
                     ["MBIN_FILE_SOURCE"] = "GCDEBUGOPTIONS.GLOBAL.MBIN",
-                    ["EXML_CHANGE_TABLE"] =
+                    ["MXML_CHANGE_TABLE"] =
                     {
                         {
                             ["PRECEDING_KEY_WORDS"] = {"LocTableList"},
@@ -186,7 +186,7 @@ NMS_MOD_DEFINITION_CONTAINER =
                 },
                 {
                     ["MBIN_FILE_SOURCE"]    = "METADATA/REALITY/DEFAULTREALITY.MBIN",
-                    ["EXML_CHANGE_TABLE"]    =
+                    ["MXML_CHANGE_TABLE"]    =
                     {
                     }
                 }
@@ -383,7 +383,7 @@ end
 ----------------------------------------------------------------------------------------------
 
 -------------------------------     Consumable Product   -------------------------------------
-local AddToProductTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
+local AddToProductTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["MXML_CHANGE_TABLE"]
 for i = 1, #AddNewConsumableProducts do
     local Requirements        = {}
     local ProductRequirements = ""
@@ -419,7 +419,7 @@ for i = 1, #AddNewConsumableProducts do
 end
 
 -------------------------------     Non-Consumable Product   -------------------------------------
-local AddToDefaultReality = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][6]["EXML_CHANGE_TABLE"]
+local AddToDefaultReality = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][6]["MXML_CHANGE_TABLE"]
 for i = 1, #AddNewCustomProducts do
     local ProductID = string.upper(AddNewCustomProducts[i]["ProductID"])
     local ProductName         = string.upper(ProductID).."_NAME"
@@ -459,9 +459,9 @@ end
 ----------------------------------------------------------------------------------------------
 ------------------------------- This also adds the recipe to known recipes -------------------
 
-local AddToConsumableTable    = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][2]["EXML_CHANGE_TABLE"]
-local AddToRewardTable        = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][3]["EXML_CHANGE_TABLE"]
-local AddToDefaultSaveData    = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][4]["EXML_CHANGE_TABLE"]
+local AddToConsumableTable    = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][2]["MXML_CHANGE_TABLE"]
+local AddToRewardTable        = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][3]["MXML_CHANGE_TABLE"]
+local AddToDefaultSaveData    = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][4]["MXML_CHANGE_TABLE"]
 for i = 1, #AddNewConsumableProducts do
     local ProductID         = string.upper(AddNewConsumableProducts[i]["ProductID"])
     local ProductRewardData = AddNewConsumableProducts[i]["RewardData"]

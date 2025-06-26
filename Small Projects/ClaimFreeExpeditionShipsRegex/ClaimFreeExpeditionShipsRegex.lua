@@ -15,7 +15,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = Reward_Table_Path,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             SKW = { 'Id', '^RS_S.-_SHIP$' }, -- Note: can also use 'RS_S.-_SHIP'

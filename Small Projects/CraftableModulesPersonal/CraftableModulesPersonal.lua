@@ -177,7 +177,7 @@ local Product_Table_Path = 'METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.M
 NMS_MOD_DEFINITION_CONTAINER =
 {
     MOD_FILENAME = 'CraftableModules',
-    MOD_DESCRIPTION = 'Allows you to craft Rapair Kits, the Salvaged Frigate Module, the Cargo Bulkhead and the Storage Augmentation',
+    MOD_DESCRIPTION = 'Allows you to craft Repair Kits, the Salvaged Frigate Module, the Cargo Bulkhead and the Storage Augmentation',
     LUA_AUTHOR = 'Jackty89',
     MOD_AUTHOR = 'Methatronc/Maintained and edited by Jackty89',
     MODIFICATIONS =
@@ -187,7 +187,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = Product_Table_Path,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             SPECIAL_KEY_WORDS  = {'ID', 'REPAIRKIT'},
@@ -200,15 +200,15 @@ NMS_MOD_DEFINITION_CONTAINER =
                 },
                 {
                     MBIN_FILE_SOURCE = Unlockable_Item_Trees_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 }
             }
         }
     }
 }
 
-local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
-local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
+local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
+local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].MXML_CHANGE_TABLE
 
 ----------------------------------------------------------------------------------------------
 -------------------------------     Edit Product Table     -----------------------------------

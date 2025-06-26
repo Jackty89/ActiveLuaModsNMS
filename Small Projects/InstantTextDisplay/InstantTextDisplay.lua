@@ -15,7 +15,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = "METADATA/UI/SPECIALTEXTPUNCTUATIONDELAYDATA.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             MATH_OPERATION = "*",

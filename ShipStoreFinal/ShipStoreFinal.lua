@@ -393,35 +393,35 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/TABLES/CONSUMABLEITEMTABLE.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/TABLES/REWARDTABLE.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/DEFAULTREALITY.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = 'LANGUAGE/NMS_LOC8_ENGLISH.MBIN',
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = "GCDEBUGOPTIONS.GLOBAL.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             PRECEDING_KEY_WORDS = {"LocTableList"},
@@ -440,11 +440,11 @@ NMS_MOD_DEFINITION_CONTAINER =
 }
 
 
-local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
-local Changes_To_Consumable_Item_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][2]["EXML_CHANGE_TABLE"]
-local Changes_To_Reward_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][3]["EXML_CHANGE_TABLE"]
-local Changes_To_Default_Reality = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][4]["EXML_CHANGE_TABLE"]
-local Changes_To_Language = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][5]['EXML_CHANGE_TABLE']
+local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["MXML_CHANGE_TABLE"]
+local Changes_To_Consumable_Item_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][2]["MXML_CHANGE_TABLE"]
+local Changes_To_Reward_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][3]["MXML_CHANGE_TABLE"]
+local Changes_To_Default_Reality = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][4]["MXML_CHANGE_TABLE"]
+local Changes_To_Language = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][5]['MXML_CHANGE_TABLE']
 
 --NEW/EDIT from V2
 function Create_Ship_Reward_Entry_Template()
@@ -961,7 +961,7 @@ function New_Empty_Language_File(New_Language_File_Name)
     Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
     {
         MBIN_FILE_SOURCE= New_Language_File_Name,
-        EXML_CHANGE_TABLE =
+        MXML_CHANGE_TABLE =
         {
             {
                 -- PRECEDING_KEY_WORDS = {'Table',},
@@ -975,7 +975,7 @@ function New_Empty_Language_File(New_Language_File_Name)
     -- Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
     -- {
     --     MBIN_FILE_SOURCE = New_Language_File_Name,
-    --     EXML_CHANGE_TABLE =
+    --     MXML_CHANGE_TABLE =
     --     {
     --         {
     --             LINE_OFFSET = "3",
@@ -1097,7 +1097,7 @@ function Add_Custom_Language_String()
         Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
         {
             MBIN_FILE_SOURCE = New_Language_File_Name,
-            EXML_CHANGE_TABLE =
+            MXML_CHANGE_TABLE =
             {
                 {
                     PRECEDING_KEY_WORDS = {'Table'},

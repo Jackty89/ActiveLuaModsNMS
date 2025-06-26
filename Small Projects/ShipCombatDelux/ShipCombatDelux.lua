@@ -291,13 +291,13 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     ["MBIN_FILE_SOURCE"] = "METADATA/REALITY/TABLES/REWARDTABLE.MBIN",
-                    ["EXML_CHANGE_TABLE"] = {}
+                    ["MXML_CHANGE_TABLE"] = {}
                 }
             }
         }
     }
 }
-local Changes_To_Reward_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
+local Changes_To_Reward_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["MXML_CHANGE_TABLE"]
 
 function Create_Reward_Entry(Entry_Id)
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =

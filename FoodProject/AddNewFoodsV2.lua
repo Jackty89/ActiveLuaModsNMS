@@ -211,31 +211,31 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     ["MBIN_FILE_SOURCE"]    = "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
-                    ["EXML_CHANGE_TABLE"]   =
+                    ["MXML_CHANGE_TABLE"]   =
                     {
                     }
                 },
                 {
                     ["MBIN_FILE_SOURCE"]    = "METADATA/REALITY/TABLES/NMS_REALITY_GCRECIPETABLE.MBIN",
-                    ["EXML_CHANGE_TABLE"]   =
+                    ["MXML_CHANGE_TABLE"]   =
                     {
                     }
                 },
                 {
                     ["MBIN_FILE_SOURCE"]    = "METADATA/REALITY/TABLES/NMS_REALITY_GCSUBSTANCETABLE.MBIN",
-                    ["EXML_CHANGE_TABLE"]   =
+                    ["MXML_CHANGE_TABLE"]   =
                     {
                     }
                 },
                 {
                     ["MBIN_FILE_SOURCE"]    = "METADATA/REALITY/TABLES/CONSUMABLEITEMTABLE.MBIN",
-                    ["EXML_CHANGE_TABLE"]   =
+                    ["MXML_CHANGE_TABLE"]   =
                     {
                     }
                 },
                 {
                     ["MBIN_FILE_SOURCE"]    = "GCDEBUGOPTIONS.GLOBAL.MBIN",
-                    ["EXML_CHANGE_TABLE"] =
+                    ["MXML_CHANGE_TABLE"] =
                     {
                         {
                             ["PRECEDING_KEY_WORDS"] = {"LocTableList"},
@@ -406,7 +406,7 @@ function CreateNewConsumable(NewFoodID, NewFoodConsumeRewardID)
 end
 
 --Add New Foods to the product table
-local AddNewFoodsToProductTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
+local AddNewFoodsToProductTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["MXML_CHANGE_TABLE"]
 for i = 1, #AddNewFood do
 
     local FoodID = string.upper(AddNewFood[i]["FoodID"])
@@ -426,7 +426,7 @@ for i = 1, #AddNewFood do
 end
 
 --Adds a new Recipe to te Recipe table for the new Food
-local AddNewRecipes = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][2]["EXML_CHANGE_TABLE"]
+local AddNewRecipes = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][2]["MXML_CHANGE_TABLE"]
 for i = 1, #AddNewFood do
     local Recipes = {}
 
@@ -461,7 +461,7 @@ for i = 1, #AddNewFood do
 end
 
 --Adds the new Food as a consumable to consumable table
-local AddFoodsAsConsumable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][4]["EXML_CHANGE_TABLE"]
+local AddFoodsAsConsumable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][4]["MXML_CHANGE_TABLE"]
 for i = 1, #AddNewFood do
     local FoodID = string.upper(AddNewFood[i]["FoodID"])
     local FoodConsumeReward = string.upper(AddNewFood[i]["ConsumeReward"])
@@ -553,9 +553,9 @@ end
 local SetSubstancesOrProductsAsCookingProducts = {}
 for i = 1, #MakeProductOrSubstanceACookingIngredient do
     if MakeProductOrSubstanceACookingIngredient[i][1] == SubstanceOrProduct["Product"] then
-        SetSubstancesOrProductsAsCookingProducts = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
+        SetSubstancesOrProductsAsCookingProducts = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["MXML_CHANGE_TABLE"]
     else
-        SetSubstancesOrProductsAsCookingProducts = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][3]["EXML_CHANGE_TABLE"]
+        SetSubstancesOrProductsAsCookingProducts = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][3]["MXML_CHANGE_TABLE"]
     end
 
     SetSubstancesOrProductsAsCookingProducts[#SetSubstancesOrProductsAsCookingProducts + 1] =

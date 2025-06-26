@@ -160,13 +160,13 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = GcRecipeTable,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = GcProductTable,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 }
@@ -176,8 +176,8 @@ NMS_MOD_DEFINITION_CONTAINER =
 }
 
 
-local Changes_To_Recipe_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
-local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
+local Changes_To_Recipe_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
+local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].MXML_CHANGE_TABLE
 
 function Create_New_Ingredient(Ingedient_ID, Ingredient_Type, Ingredient_Amount)
     Changes_To_Recipe_Table[#Changes_To_Recipe_Table + 1] =

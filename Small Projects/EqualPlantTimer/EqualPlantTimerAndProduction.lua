@@ -120,15 +120,15 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/TABLES/NMS_BASEPARTPRODUCTS.MBIN",
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/TABLES/REWARDTABLE.MBIN",
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = English_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 }
             }
         }
@@ -136,7 +136,7 @@ NMS_MOD_DEFINITION_CONTAINER =
 }
 
 
-local ChangesToProductTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
+local ChangesToProductTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
 
 for j = 1, #ProductIds do
     
@@ -152,7 +152,7 @@ for j = 1, #ProductIds do
     }
 end
 
-local ChangesToRewardTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
+local ChangesToRewardTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].MXML_CHANGE_TABLE
 for k = 1, #PlantRewardIds do
     local rewardId = PlantRewardIds[k]
     ChangesToRewardTable[#ChangesToRewardTable +1] =
@@ -171,7 +171,7 @@ end
 -------------------------------     Language file creation     -------------------------------
 ----------------------------------------------------------------------------------------------
 local Changes_To_Mbin_Change_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE
-local Changes_To_Language = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].EXML_CHANGE_TABLE
+local Changes_To_Language = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].MXML_CHANGE_TABLE
 
 function Create_Language_Masters()
     Changes_To_Language[#Changes_To_Language + 1] =
@@ -294,7 +294,7 @@ function Add_Custom_Language_String()
         Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
         {
             MBIN_FILE_SOURCE = Langauge_file,
-            EXML_CHANGE_TABLE =
+            MXML_CHANGE_TABLE =
             {
                 {
                     PRECEDING_KEY_WORDS = {'Table'},
@@ -316,7 +316,7 @@ function Plant_Edits()
         ChangesToPlant[#ChangesToPlant + 1] =
         {
             MBIN_FILE_SOURCE = source,
-            EXML_CHANGE_TABLE =
+            MXML_CHANGE_TABLE =
             {
                 {
                     SPECIAL_KEY_WORDS = {"TriggerAction","STEP1_ENTER"},

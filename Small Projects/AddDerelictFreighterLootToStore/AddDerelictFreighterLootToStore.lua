@@ -39,7 +39,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = DefaultRealityPath,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             PRECEDING_KEY_WORDS = {"TradeSettings", "Scrap"},
@@ -54,15 +54,15 @@ NMS_MOD_DEFINITION_CONTAINER =
                 },
                 {
                     MBIN_FILE_SOURCE = UnlockableItemTreesPath,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 }
             }
         }
     }
 }
 
-local Changes_To_Default_Reality = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
-local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
+local Changes_To_Default_Reality = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
+local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].MXML_CHANGE_TABLE
 
 function Create_Shop_Entry(Mapshop_Entry_Id)
     Changes_To_Default_Reality[#Changes_To_Default_Reality + 1] =

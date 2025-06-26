@@ -1754,31 +1754,31 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = Product_Table_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Technology_Table_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Procedural_Technology_Table_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Default_Reality_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Unlockable_Item_Trees_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = English_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = 'GCDEBUGOPTIONS.GLOBAL.MBIN',
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             PRECEDING_KEY_WORDS = {'LocTableList'},
@@ -1794,12 +1794,12 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][1]['EXML_CHANGE_TABLE']
-local Changes_To_Technology_Table = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][2]['EXML_CHANGE_TABLE']
-local Changes_To_Procedural_Technology_Table = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][3]['EXML_CHANGE_TABLE']
-local Changes_To_Default_Reality = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][4]['EXML_CHANGE_TABLE']
-local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][5]['EXML_CHANGE_TABLE']
-local Changes_To_Language = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][6]['EXML_CHANGE_TABLE']
+local Changes_To_Product_Table = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][1]['MXML_CHANGE_TABLE']
+local Changes_To_Technology_Table = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][2]['MXML_CHANGE_TABLE']
+local Changes_To_Procedural_Technology_Table = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][3]['MXML_CHANGE_TABLE']
+local Changes_To_Default_Reality = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][4]['MXML_CHANGE_TABLE']
+local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][5]['MXML_CHANGE_TABLE']
+local Changes_To_Language = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][6]['MXML_CHANGE_TABLE']
 ----------------------------------------------------------------------------------------------
 -------------------------------     Creating Masters     -------------------------------------
 ----------------------------------------------------------------------------------------------
@@ -2550,7 +2550,7 @@ function Add_Custom_Language_String()
         Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
         {
             MBIN_FILE_SOURCE = Langauge_file,
-            EXML_CHANGE_TABLE =
+            MXML_CHANGE_TABLE =
             {
                 {
                     PRECEDING_KEY_WORDS = {'Table'},

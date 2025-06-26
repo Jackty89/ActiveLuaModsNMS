@@ -161,14 +161,14 @@ local ChangesToInventoryTable = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MB
 
 function EditInventory(type, maxSlot)
     print(type)
-    if ChangesToInventoryTable.EXML_CHANGE_TABLE == nil then
-        print("Initialize EXML_CHANGE_TABLE")
-        ChangesToInventoryTable.EXML_CHANGE_TABLE = {}
+    if ChangesToInventoryTable.MXML_CHANGE_TABLE == nil then
+        print("Initialize MXML_CHANGE_TABLE")
+        ChangesToInventoryTable.MXML_CHANGE_TABLE = {}
     end
 
     if maxSlot or string.find(type, "Vehicle") then
         print("vehicle "..type)
-        ChangesToInventoryTable.EXML_CHANGE_TABLE[#ChangesToInventoryTable.EXML_CHANGE_TABLE + 1] =
+        ChangesToInventoryTable.MXML_CHANGE_TABLE[#ChangesToInventoryTable.MXML_CHANGE_TABLE + 1] =
         {
             SPECIAL_KEY_WORDS = {type, "GcInventoryLayoutGenerationDataEntry"},
             VALUE_CHANGE_TABLE =
@@ -182,7 +182,7 @@ function EditInventory(type, maxSlot)
     end
 
     if type ~= "Suite" then
-        ChangesToInventoryTable.EXML_CHANGE_TABLE[#ChangesToInventoryTable.EXML_CHANGE_TABLE + 1] =
+        ChangesToInventoryTable.MXML_CHANGE_TABLE[#ChangesToInventoryTable.MXML_CHANGE_TABLE + 1] =
         {
             SPECIAL_KEY_WORDS = {type, "GcInventoryLayoutGenerationDataEntry", "Bounds", "GcInventoryLayoutGenerationBounds"},
             VALUE_CHANGE_TABLE =
@@ -196,7 +196,7 @@ function EditInventory(type, maxSlot)
             }
         }
 
-        ChangesToInventoryTable.EXML_CHANGE_TABLE[#ChangesToInventoryTable.EXML_CHANGE_TABLE + 1] =
+        ChangesToInventoryTable.MXML_CHANGE_TABLE[#ChangesToInventoryTable.MXML_CHANGE_TABLE + 1] =
         {
             SPECIAL_KEY_WORDS = {type, "GcInventoryLayoutGenerationDataEntry", "TechBounds", "GcInventoryLayoutGenerationBounds"},
             VALUE_CHANGE_TABLE =
@@ -213,7 +213,7 @@ function EditInventory(type, maxSlot)
 end
 
 function ImproveClassSlotLimit(type)
-    ChangesToInventoryTable.EXML_CHANGE_TABLE[#ChangesToInventoryTable.EXML_CHANGE_TABLE + 1] =
+    ChangesToInventoryTable.MXML_CHANGE_TABLE[#ChangesToInventoryTable.MXML_CHANGE_TABLE + 1] =
     {
         PRECEDING_KEY_WORDS = {"ShipInventoryMaxUpgradeSize", type, "MaxInventoryCapacity"},
         VALUE_CHANGE_TABLE =
@@ -225,7 +225,7 @@ function ImproveClassSlotLimit(type)
         }
     }
 
-    ChangesToInventoryTable.EXML_CHANGE_TABLE[#ChangesToInventoryTable.EXML_CHANGE_TABLE + 1] =
+    ChangesToInventoryTable.MXML_CHANGE_TABLE[#ChangesToInventoryTable.MXML_CHANGE_TABLE + 1] =
     {
         PRECEDING_KEY_WORDS = {"ShipInventoryMaxUpgradeSize", type, "MaxTechInventoryCapacity"},
         VALUE_CHANGE_TABLE =
@@ -262,7 +262,7 @@ function ImproveWeaponInventory()
         EditInventory(weaponSize, MaxSlot)
     end
 
-    ChangesToInventoryTable.EXML_CHANGE_TABLE[#ChangesToInventoryTable.EXML_CHANGE_TABLE + 1] =
+    ChangesToInventoryTable.MXML_CHANGE_TABLE[#ChangesToInventoryTable.MXML_CHANGE_TABLE + 1] =
     {
         SPECIAL_KEY_WORDS = {"WeaponInventoryMaxUpgradeSize", "GcWeaponInventoryMaxUpgradeCapacity"},
         VALUE_CHANGE_TABLE =
@@ -291,8 +291,8 @@ end
 
 local ChangesToDefaultReality = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2]
 function NewSaveStartingSlots()
-    ChangesToDefaultReality.EXML_CHANGE_TABLE = {}
-    ChangesToDefaultReality.EXML_CHANGE_TABLE[#ChangesToDefaultReality.EXML_CHANGE_TABLE  + 1] =
+    ChangesToDefaultReality.MXML_CHANGE_TABLE = {}
+    ChangesToDefaultReality.MXML_CHANGE_TABLE[#ChangesToDefaultReality.MXML_CHANGE_TABLE  + 1] =
     {
         SPECIAL_KEY_WORDS = {"SuitStartingSlotLayout", "GcInventoryLayout"},
         VALUE_CHANGE_TABLE =
@@ -300,7 +300,7 @@ function NewSaveStartingSlots()
             {"Slots", MaxInventoryCap}
         }
     }
-    ChangesToDefaultReality.EXML_CHANGE_TABLE [#ChangesToDefaultReality.EXML_CHANGE_TABLE  + 1] =
+    ChangesToDefaultReality.MXML_CHANGE_TABLE [#ChangesToDefaultReality.MXML_CHANGE_TABLE  + 1] =
     {
         SPECIAL_KEY_WORDS = {"ShipStartingLayout", "GcInventoryLayout"},
         VALUE_CHANGE_TABLE =
@@ -308,7 +308,7 @@ function NewSaveStartingSlots()
             {"Slots", MaxInventoryCap}
         }
     }
-    ChangesToDefaultReality.EXML_CHANGE_TABLE [#ChangesToDefaultReality.EXML_CHANGE_TABLE  + 1] =
+    ChangesToDefaultReality.MXML_CHANGE_TABLE [#ChangesToDefaultReality.MXML_CHANGE_TABLE  + 1] =
     {
         SPECIAL_KEY_WORDS = {"SuitTechOnlyStartingSlotLayout", "GcInventoryLayout"},
         VALUE_CHANGE_TABLE =
@@ -316,7 +316,7 @@ function NewSaveStartingSlots()
             {"Slots", MaxTechCap}
         }
     }
-    ChangesToDefaultReality.EXML_CHANGE_TABLE [#ChangesToDefaultReality.EXML_CHANGE_TABLE  + 1] =
+    ChangesToDefaultReality.MXML_CHANGE_TABLE [#ChangesToDefaultReality.MXML_CHANGE_TABLE  + 1] =
     {
         SPECIAL_KEY_WORDS = {"ShipTechOnlyStartingLayout", "GcInventoryLayout"},
         VALUE_CHANGE_TABLE =

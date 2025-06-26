@@ -147,7 +147,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = DIFFICULTYCONFIG,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         -- high == standard option == normal difficulty
                         {
@@ -186,7 +186,7 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-DifficultyConfigTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
+DifficultyConfigTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["MXML_CHANGE_TABLE"]
 function EditStackSizesLow()
     Vct_Stack_Size = Value_Change_Edits[Edit_keys[Choice]]["STACK_SIZE"]
     Vct_Edits_Sub = Value_Change_Edits[Edit_keys[Choice]]["VCT_EDITS_SUB"]

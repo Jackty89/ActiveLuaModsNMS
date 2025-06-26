@@ -4,12 +4,12 @@ Author = "Jackty89"
 CostTablePath = "METADATA/REALITY/TABLES/COSTTABLE.MBIN"
 Cost_List = [[
     <Property name="Costs">
-        <Property name="Costs" value="25" />
-        <Property name="Costs" value="50" />
-        <Property name="Costs" value="75" />
-        <Property name="Costs" value="100" />
-        <Property name="Costs" value="125" />
-        <Property name="Costs" value="150" />
+        <Property name="Costs" value="25" _index="0" />
+        <Property name="Costs" value="50" _index="1" />
+        <Property name="Costs" value="75" _index="2" />
+        <Property name="Costs" value="100" _index="3" />
+        <Property name="Costs" value="125" _index="4" />
+        <Property name="Costs" value="150" _index="5" />
     </Property>
 ]]
 
@@ -25,7 +25,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = CostTablePath,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             PRECEDING_KEY_WORDS = {"Costs"},

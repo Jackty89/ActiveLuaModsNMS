@@ -84,37 +84,37 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/DEFAULTREALITY.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = "METADATA/GAMESTATE/DEFAULTSAVEDATA.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = "METADATA/GAMESTATE/DIFFICULTYCONFIG.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = "GCBUILDINGGLOBALS.GLOBAL.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/TABLES/BASEBUILDINGOBJECTSTABLE.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 },
                 {
                     MBIN_FILE_SOURCE = "METADATA/REALITY/TABLES/UNLOCKABLEITEMTREES.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 }
@@ -123,12 +123,12 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local Changes_To_Default_Reality = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
-local Changes_To_Default_Save_Data = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
-local Changes_To_Difficulty_Config = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].EXML_CHANGE_TABLE
-local Changes_To_Building_Globals = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[4].EXML_CHANGE_TABLE
-local Changes_To_Base_Building_Objects = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[5].EXML_CHANGE_TABLE
-local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[6].EXML_CHANGE_TABLE
+local Changes_To_Default_Reality = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
+local Changes_To_Default_Save_Data = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].MXML_CHANGE_TABLE
+local Changes_To_Difficulty_Config = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].MXML_CHANGE_TABLE
+local Changes_To_Building_Globals = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[4].MXML_CHANGE_TABLE
+local Changes_To_Base_Building_Objects = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[5].MXML_CHANGE_TABLE
+local Changes_To_Unlockable_Item_Trees = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[6].MXML_CHANGE_TABLE
 
 
 function Create_Masters()
@@ -187,6 +187,15 @@ function Create_New_KnownProducts_Sections(value, master_section)
     }
 end
 
+function Create_New_KnownTech_Sections(value, master_section)
+    Changes_To_Default_Save_Data[#Changes_To_Default_Save_Data + 1] =
+    {
+        SEC_EDIT = master_section,
+        ADD_OPTION = "ADDafterSECTION",
+        ADD = [[<Property name="KnownTech" value="]]..value..[[" />]],
+    }
+end
+
 function Edit_Inventory_Element(value)
     Changes_To_Default_Save_Data[#Changes_To_Default_Save_Data + 1] =
     {
@@ -240,7 +249,7 @@ function Edit_Starter_ShipSlots_And_Inventory_Items()
         Create_New_KnownProducts_Sections(product, "Known_Products")
     end
     for _index, tech in ipairs(Items_To_Add_To_KnownTech) do
-        Create_New_KnownProducts_Sections(tech, "Known_Tech")
+        Create_New_KnownTech_Sections(tech, "Known_Tech")
     end
 
     Changes_To_Default_Save_Data[#Changes_To_Default_Save_Data + 1] =
@@ -343,7 +352,7 @@ function Base_Parts_Delux()
     }
     Changes_To_Unlockable_Item_Trees[#Changes_To_Unlockable_Item_Trees + 1] =
     {
-        SPECIAL_KEY_WORDS = {"BasicBaseParts", "GcUnlockableItemTrees"},
+        SPECIAL_KEY_WORDS = {"BasicBaseParts", "GcUnlockableItemTrees", "Title", "UI_PURCHASABLE_BASICPARTS_TREE"},
         SEC_ADD_NAMED = "Base_parts"
     }
 end

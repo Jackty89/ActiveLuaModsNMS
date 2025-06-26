@@ -23,7 +23,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = DIFFICULTYCONFIG,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 }
@@ -32,7 +32,7 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-DifficultyConfigTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["EXML_CHANGE_TABLE"]
+DifficultyConfigTable = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][1]["MXML_CHANGE_TABLE"]
 function EditStackSizes(currentType)
 
     DifficultyConfigTable[#DifficultyConfigTable + 1] =

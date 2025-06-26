@@ -79,20 +79,20 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = Vehicle_Scan_Table_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Scan_Event_Table_Planet_Path,
                     MBIN_FS_DISCARD = "TRUE",
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Vehicle_Scan_Event_Table_Path,
-                    EXML_CHANGE_TABLE = {}
+                    MXML_CHANGE_TABLE = {}
                 },
                 {
                     MBIN_FILE_SOURCE = Building_Globals_Path,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             VALUE_CHANGE_TABLE =
@@ -110,9 +110,9 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local Changes_To_Vehicle_Scan_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].EXML_CHANGE_TABLE
-local Changes_To_Scan_Event_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
-local Changes_Vehicle_Scan_Event_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].EXML_CHANGE_TABLE
+local Changes_To_Vehicle_Scan_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
+local Changes_To_Scan_Event_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].MXML_CHANGE_TABLE
+local Changes_Vehicle_Scan_Event_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[3].MXML_CHANGE_TABLE
 
 function Add_Single_Scan_Event_For_Vehicle(Value, Name, RequiredTech, Icon)
     Changes_To_Vehicle_Scan_Table[#Changes_To_Vehicle_Scan_Table + 1] =
@@ -123,9 +123,18 @@ function Add_Single_Scan_Event_For_Vehicle(Value, Name, RequiredTech, Icon)
     Changes_To_Vehicle_Scan_Table[#Changes_To_Vehicle_Scan_Table + 1] =
     {
         SEC_EDIT = "SCAN_EVENT",
+        PRECEDING_KEY_WORDS = {'ScanList'},
+        LINE_OFFSET = 1,
         VALUE_CHANGE_TABLE =
         {
-            {"Value", Value},
+            {"ScanList", Value},
+        }
+    }
+    Changes_To_Vehicle_Scan_Table[#Changes_To_Vehicle_Scan_Table + 1] =
+    {
+        SEC_EDIT = "SCAN_EVENT",
+        VALUE_CHANGE_TABLE =
+        {
             {"Name", Name},
             {"RequiredTech", RequiredTech},
             {"Filename", Icon},

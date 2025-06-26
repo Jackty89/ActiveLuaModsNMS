@@ -15,7 +15,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = "GCGALAXYGLOBALS.GLOBAL.MBIN",
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             VALUE_CHANGE_TABLE =

@@ -248,7 +248,7 @@ NMS_MOD_DEFINITION_CONTAINER =
             {
                 {
                     MBIN_FILE_SOURCE = SpaceShipGlobalsPath,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                         {
                             --Reduce launch cost for Shuttle
@@ -262,7 +262,7 @@ NMS_MOD_DEFINITION_CONTAINER =
                 },
                 {
                     MBIN_FILE_SOURCE = InventoryTablePath,
-                    EXML_CHANGE_TABLE =
+                    MXML_CHANGE_TABLE =
                     {
                     }
                 }
@@ -271,7 +271,7 @@ NMS_MOD_DEFINITION_CONTAINER =
     }
 }
 
-local Changes_To_Inventory_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].EXML_CHANGE_TABLE
+local Changes_To_Inventory_Table = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[2].MXML_CHANGE_TABLE
 function Change_Properties()
     for property_stat, values_per_class in pairs(Property_Changes) do
         for class, ship_stats_per_class in pairs(values_per_class) do
