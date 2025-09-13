@@ -4,11 +4,14 @@
 --         and for each weapontype a master that only need seed + slots as edit during the 10k loop
 -- Sec-save that to SHIP master (use  list for the math rand with sec-names)
 -- Reduce pricing (done) price are slashed
+
+-- 00:10:18 for 1k seeds VS 00:01:49 for 1k on V3
+-- : : for 10k VS +5hs for 10k OnV3
 local Total_Seeds_Per_Class = 10000
 local Input_Total_Seeds_Per_Class = {Total_Seeds_Per_Class,
 [[
     How many seeds do you wish to generate per Class-Type?
-    Default = ]]..Total_Seeds_Per_Class..[[ = >> ]] .. Total_Seeds_Per_Class .. [[ <<
+    Default = ]]..Total_Seeds_Per_Class..[[ = >> ]].. Total_Seeds_Per_Class ..[[ <<
 ]]}
 Total_Seeds_Per_Class = GUIF(Input_Total_Seeds_Per_Class, 10)
 
@@ -96,7 +99,7 @@ local Language_Data =
             NAME = 'H.G. Corp. Spacecraft Dynamics',
             DESCRIPTION = 'Spacecraft constucted by H.G. Corp.',
             SUBTITLE = 'H.G. Corp. Spacecraft Dynamics'
-        },
+        }
     }
 }
 
@@ -311,7 +314,7 @@ for Key, _Value in pairs(Ship_Type_Data) do
     Input_Choice = {Choice,
     [[
         Would you like add ]]..Key..[[?
-        Default = Y | Current = >> ]] .. (Choice and "Y" or "N") .. [[ <<
+        Default = Y | Current = >> ]].. (Choice and "Y" or "N") ..[[ <<
     ]]}
     Choice = GUIF(Input_Choice, 10)
 
@@ -360,7 +363,7 @@ Input_Class_Choice = {Class_Choice,
     * 2 = B -> S
     * 3 = A -> S
     * 4 = S
-    Default = ]] .. Class_Choice .. [[ = >> ]] .. Class_Choice .. [[ <<
+    Default = ]].. Class_Choice ..[[ = >> ]].. Class_Choice ..[[ <<
 ]]}
 Class_Choice = GUIF(Input_Class_Choice, 10)
 
@@ -368,7 +371,7 @@ Class_Choice = GUIF(Input_Class_Choice, 10)
 Input_Price_Multiplier = {Price_Multiplier,
 [[
     Do you wish to change the Price multiplier?
-    Default = ]] .. Price_Multiplier .. [[ = >> ]] .. Price_Multiplier .. [[ <<
+    Default = ]].. Price_Multiplier ..[[=>> ]: 
 ]]}
 
 Price_Multiplier = GUIF(Input_Price_Multiplier, 10)
@@ -446,12 +449,11 @@ local Changes_To_Reward_Table = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]
 local Changes_To_Default_Reality = NMS_MOD_DEFINITION_CONTAINER["MODIFICATIONS"][1]["MBIN_CHANGE_TABLE"][4]["MXML_CHANGE_TABLE"]
 local Changes_To_Language = NMS_MOD_DEFINITION_CONTAINER['MODIFICATIONS'][1]['MBIN_CHANGE_TABLE'][5]['MXML_CHANGE_TABLE']
 
---NEW/EDIT from V2
+--NEW/EDIT from V3
 function Create_Ship_Reward_Entry_Template()
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
-        SPECIAL_KEY_WORDS = {"Id", "R_SWIT_SHIP01"},
-        PRECEDING_KEY_WORDS = {"List", "List", "GcRewardTableItem"},
+        SPECIAL_KEY_WORDS = {"Id", "R_SWIT_SHIP01", "List", "GcRewardTableItem"},
         SEC_SAVE_TO = "COPY_SHIP_ENTRY_SEC"
     }
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
@@ -465,7 +467,7 @@ function Create_Ship_Reward_Entry_Template()
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
         SEC_EDIT = "COPY_SHIP_ENTRY_SEC",
-        PRECEDING_KEY_WORDS = {"GcInventoryElement"},
+        SPECIAL_KEY_WORDS = {"Slots", "GcInventoryElement"},
         REPLACE_TYPE = "ALL",
         REMOVE = "SECTION"
     }
@@ -483,8 +485,7 @@ end
 function Create_Technology_Template(template_name, technology_id, technology_amount, technology_maxamount)
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
-        SPECIAL_KEY_WORDS = {"Id", "R_SWIT_SHIP01"},
-        PRECEDING_KEY_WORDS = {"ShipInventory", "Slots", "GcInventoryElement"},
+        SPECIAL_KEY_WORDS = {"Id", "R_SWIT_SHIP01", "Slots", "GcInventoryElement"},
         SEC_SAVE_TO = template_name
     }
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
@@ -544,24 +545,6 @@ function Create_Ship_Type_Reward_Template(ship_type_template_name, ship_type, sh
         VALUE_CHANGE_TABLE =
         {
             {"Filename", ship_model}
-        }
-    }
-    Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
-    {
-        SEC_EDIT = ship_type_template_name,
-        PRECEDING_KEY_WORDS = {"Seed"},
-        VALUE_CHANGE_TABLE =
-        {
-            {"UseSeedValue", "True"}
-        }
-    }
-    Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
-    {
-        SEC_EDIT = ship_type_template_name,
-        PRECEDING_KEY_WORDS = {"ShipLayout"},
-        VALUE_CHANGE_TABLE =
-        {
-            {"UseSeedValue", "True"}
         }
     }
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
@@ -787,25 +770,11 @@ function Create_Reward_Table_Entry(reward_id, reward_choice)
     }
 end
 
-function Create_Shop_Entry(entry_id)
+function Create_Shop_Entry(Entry_ID)
     Changes_To_Default_Reality[#Changes_To_Default_Reality + 1] =
     {
-        PRECEDING_KEY_WORDS = {"TradeSettings", "SpaceStation", "AlwaysPresentProducts", "NMSString0x10.xml"},
-        SEC_SAVE_TO = "SHOP_ENTRY"
-    }
-    Changes_To_Default_Reality[#Changes_To_Default_Reality + 1] =
-    {
-        SEC_EDIT = "SHOP_ENTRY",
-        VALUE_CHANGE_TABLE =
-        {
-            {"Value", entry_id}
-        }
-    }
-    Changes_To_Default_Reality[#Changes_To_Default_Reality + 1] =
-    {
-        SEC_EDIT = "SHOP_MASTER_SEC",
-        ADD_OPTION = "ADDafterSECTION",
-        SEC_ADD_NAMED = "SHOP_ENTRY"
+        SEC_EDIT = 'SHOP_MASTER_SEC',
+        ADD = [[<Property name="AlwaysPresentProducts" value="]]..Entry_ID..[[" />]]
     }
 end
 
@@ -819,7 +788,8 @@ function Create_Ship_Reward_Entry(reward_sec, template_name, ship_seed, ship_slo
     Changes_To_Reward_Table[#Changes_To_Reward_Table + 1] =
     {
         SEC_EDIT = reward_sec,
-        PRECEDING_KEY_WORDS = {'Seed'},
+        SPECIAL_KEY_WORDS = {'Reward', 'GcRewardSpecificShip', 'ShipResource', 'GcResourceElement'},
+        -- PRECEDING_KEY_WORDS = {'Seed'},
         VALUE_CHANGE_TABLE =
         {
             {'Seed', ship_seed}
@@ -964,31 +934,12 @@ function New_Empty_Language_File(New_Language_File_Name)
         MXML_CHANGE_TABLE =
         {
             {
-                -- PRECEDING_KEY_WORDS = {'Table',},
                 SPECIAL_KEY_WORDS = {'Table', 'TkLocalisationEntry'},
-                -- REPLACE_TYPE = "ALLINSECTION",
                 REPLACE_TYPE = "ALL",
                 REMOVE = 'SECTION',
             }
         }
     }
-    -- Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
-    -- {
-    --     MBIN_FILE_SOURCE = New_Language_File_Name,
-    --     MXML_CHANGE_TABLE =
-    --     {
-    --         {
-    --             LINE_OFFSET = "3",
-    --             -- needs to be " quotes
-    --             -- 2 spaces == 1 tab in MXML
-    --             ADD = [[  <Property name="Table">]]
-    --         },
-    --         {
-    --             LINE_OFFSET = "4",
-    --             ADD = [[  </Property>]]
-    --         }
-    --     }
-    -- }
 end
 
 function New_Empty_Langauge_Entries(Language)
