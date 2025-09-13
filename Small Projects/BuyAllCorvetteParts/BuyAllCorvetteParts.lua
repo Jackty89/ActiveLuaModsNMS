@@ -20,13 +20,14 @@ NMS_MOD_DEFINITION_CONTAINER =
                     MXML_CHANGE_TABLE =
                     {
                         {
-                            PRECEDING_KEY_WORDS = {"TradeSettings", "BiggsBasicShop"},
-                            VALUE_CHANGE_TABLE =
-                            {
-                                -- should check if i can do thos wihtout hardcoding
-                                {"MinItemsForSale", 114},
-                                {"MaxItemsForSale", 114}
-                            }
+                            -- PRECEDING_KEY_WORDS = {"TradeSettings", "BiggsBasicShop"},
+                            -- VALUE_CHANGE_TABLE =
+                            -- {
+                            --     -- should check if i can do this wihtout hardcoding
+                            --     -- not sure if this is even needed
+                            --     {"MinItemsForSale", 114},
+                            --     {"MaxItemsForSale", 114}
+                            -- }
                         }
                     }
                 }
