@@ -1,5 +1,5 @@
-local ContainerID = {"CONTAINER0","CONTAINER1","CONTAINER2","CONTAINER3","CONTAINER4","CONTAINER5","CONTAINER6","CONTAINER7","CONTAINER8","CONTAINER9"}
-local GarageID = {"GARAGE_B","GARAGE_S","GARAGE_M","GARAGE_L","GARAGE_MECH","GARAGE_SUB", "GARAGE_FLOAT"}
+local ContainerIDList = {"CONTAINER0","CONTAINER1","CONTAINER2","CONTAINER3","CONTAINER4","CONTAINER5","CONTAINER6","CONTAINER7","CONTAINER8","CONTAINER9"}
+local GarageIDList = {"GARAGE_B","GARAGE_S","GARAGE_M","GARAGE_L","GARAGE_MECH","GARAGE_SUB", "GARAGE_FLOAT"}
 
 NMS_MOD_DEFINITION_CONTAINER =
 {
@@ -47,12 +47,12 @@ NMS_MOD_DEFINITION_CONTAINER =
 }
 
 local Change_Table_Ref = NMS_MOD_DEFINITION_CONTAINER.MODIFICATIONS[1].MBIN_CHANGE_TABLE[1].MXML_CHANGE_TABLE
-function Edit_containers()
-    for i=1,#ContainerID do
-        local value = ContainerID[i]
+function Edit_Containers()
+    for i = 1, #ContainerIDList do
+        local containerId = ContainerIDList[i]
         Change_Table_Ref[#Change_Table_Ref + 1] =
         {
-            SPECIAL_KEY_WORDS = {"ID",value},
+            SPECIAL_KEY_WORDS = {"ID",containerId},
             REPLACE_TYPE = "ALL",
             VALUE_CHANGE_TABLE  =
             {
@@ -64,11 +64,11 @@ function Edit_containers()
 end
 
 function Edit_Garages()
-    for i=1,#GarageID do
-        local value = GarageID[i]
+    for i = 1, #GarageIDList do
+        local garageId = GarageIDList[i]
         Change_Table_Ref[#Change_Table_Ref + 1] =
         {
-            SPECIAL_KEY_WORDS = {"ID",value},
+            SPECIAL_KEY_WORDS = {"ID",garageId},
             REPLACE_TYPE = "ALL",
             VALUE_CHANGE_TABLE =
             {
@@ -78,5 +78,5 @@ function Edit_Garages()
     end
 end
 
-Edit_containers()
+Edit_Containers()
 Edit_Garages()

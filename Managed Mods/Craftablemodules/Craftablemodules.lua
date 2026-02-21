@@ -4,7 +4,7 @@ local Types =
     SUBSTANCE = 'Substance'
 }
 
-local New_Requirements_Array =
+local New_Requirements_Dict =
 {
     {
         PRODUCTID = 'BP_SALVAGE',
@@ -214,9 +214,9 @@ function Create_Requirement_Sections(Requirements)
 end
 
 function Change_Product_Requirement_And_Set_Craftable()
-    for i = 1, #New_Requirements_Array do
-        local ProductId = New_Requirements_Array[i].PRODUCTID
-        local Requirements = New_Requirements_Array[i].REQUIREMENTS
+    for i = 1, #New_Requirements_Dict do
+        local ProductId = New_Requirements_Dict[i].PRODUCTID
+        local Requirements = New_Requirements_Dict[i].REQUIREMENTS
         Create_Requirement_Sections(Requirements)
         Changes_To_Product_Table[#Changes_To_Product_Table + 1] =
         {

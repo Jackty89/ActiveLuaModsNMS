@@ -1,6 +1,6 @@
 local Mode_Name = 'CustomModsGalore'
 local Author = 'Jackty89'
-local Custom_Language_Tag = 'CMG'
+-- local Custom_Language_Tag = 'CMG'
 
 -- PATHS
 local Product_Table_Path = 'METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN'
@@ -797,7 +797,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             TECH_COMP = {Type = 'Product', Amount = 5},
-            BLUE2 = {Type = 'Substance ', Amount = 100},
+            BLUE2 = {Type = 'Substance', Amount = 100},
             GRENFUEL1 = {Type = 'Product', Amount = 10}
         }
     },
@@ -818,7 +818,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             TECH_COMP = {Type = 'Product', Amount = 5},
-            BLUE2 = {Type = 'Substance ', Amount = 100},
+            BLUE2 = {Type = 'Substance', Amount = 100},
             GRENFUEL1 = {Type = 'Product', Amount = 10}
         }
     },
@@ -839,7 +839,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             TECH_COMP = {Type = 'Product', Amount = 5},
-            BLUE2 = {Type = 'Substance ', Amount = 100},
+            BLUE2 = {Type = 'Substance', Amount = 100},
             HYPERFUEL2 = {Type = 'Product', Amount = 100}
         }
     },
@@ -861,7 +861,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             TECH_COMP = {Type = 'Product', Amount = 5},
-            BLUE2 = {Type = 'Substance ', Amount = 100},
+            BLUE2 = {Type = 'Substance', Amount = 100},
             JELLY = {Type = 'Product', Amount = 100}
         }
     },
@@ -948,7 +948,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             TECH_COMP = {Type = 'Product', Amount = 5},
-            BLUE2 = {Type = 'Substance ', Amount = 500},
+            BLUE2 = {Type = 'Substance', Amount = 500},
             COMPOUND4 = {Type = 'Product', Amount = 10}
         }
     },
@@ -969,7 +969,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             COLD1 = {Type = 'Substance', Amount = 300},
-            ASTEROID1 = {Type = 'Substance ', Amount = 120},
+            ASTEROID1 = {Type = 'Substance', Amount = 120},
             YELLOW2 = {Type = 'Substance', Amount = 150}
         }
     },
@@ -990,7 +990,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             COLD1 = {Type = 'Substance', Amount = 1000},
-            ASTEROID1 = {Type = 'Substance ', Amount = 500},
+            ASTEROID1 = {Type = 'Substance', Amount = 500},
             YELLOW2 = {Type = 'Substance', Amount = 500}
         }
     },
@@ -1011,7 +1011,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             COLD1 = {Type = 'Substance', Amount = 300},
-            ASTEROID1 = {Type = 'Substance ', Amount = 120},
+            ASTEROID1 = {Type = 'Substance', Amount = 120},
             FARMPROD4 = {Type = 'Product', Amount = 1}
         }
     },
@@ -1032,7 +1032,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             HOT1 = {Type = 'Substance', Amount = 300},
-            ASTEROID1 = {Type = 'Substance ', Amount = 120},
+            ASTEROID1 = {Type = 'Substance', Amount = 120},
             YELLOW2 = {Type = 'Substance', Amount = 150}
         }
     },
@@ -1053,7 +1053,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             HOT1 = {Type = 'Substance', Amount = 1000},
-            ASTEROID1 = {Type = 'Substance ', Amount = 500},
+            ASTEROID1 = {Type = 'Substance', Amount = 500},
             YELLOW2 = {Type = 'Substance', Amount = 500}
         }
     },
@@ -1074,7 +1074,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             HOT1 = {Type = 'Substance', Amount = 300},
-            ASTEROID1 = {Type = 'Substance ', Amount = 120},
+            ASTEROID1 = {Type = 'Substance', Amount = 120},
             SALVAGE_TECH5 = {Type = 'Product', Amount = 1}
         }
     },
@@ -1095,7 +1095,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             TOXIC1 = {Type = 'Substance', Amount = 300},
-            ASTEROID1 = {Type = 'Substance ', Amount = 120},
+            ASTEROID1 = {Type = 'Substance', Amount = 120},
             YELLOW2 = {Type = 'Substance', Amount = 150}
         }
     },
@@ -1116,7 +1116,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             TOXIC1 = {Type = 'Substance', Amount = 1000},
-            ASTEROID1 = {Type = 'Substance ', Amount = 500},
+            ASTEROID1 = {Type = 'Substance', Amount = 500},
             YELLOW2 = {Type = 'Substance', Amount = 500}
         }
     },
@@ -1137,7 +1137,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             TOXIC1 = {Type = 'Substance', Amount = 300},
-            ASTEROID1 = {Type = 'Substance ', Amount = 120},
+            ASTEROID1 = {Type = 'Substance', Amount = 120},
             OXY_CRAFT = {Type = 'Product', Amount = 1}
         }
     },
@@ -1158,7 +1158,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             RADIO1 = {Type = 'Substance', Amount = 300},
-            ASTEROID1 = {Type = 'Substance ', Amount = 120},
+            ASTEROID1 = {Type = 'Substance', Amount = 120},
             YELLOW2 = {Type = 'Substance', Amount = 150}
         }
     },
@@ -1179,7 +1179,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             RADIO1 = {Type = 'Substance', Amount = 1000},
-            ASTEROID1 = {Type = 'Substance ', Amount = 500},
+            ASTEROID1 = {Type = 'Substance', Amount = 500},
             YELLOW2 = {Type = 'Substance', Amount = 500}
         }
     },
@@ -1200,7 +1200,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             RADIO1 = {Type = 'Substance', Amount = 300},
-            ASTEROID1 = {Type = 'Substance ', Amount = 120},
+            ASTEROID1 = {Type = 'Substance', Amount = 120},
             WATER_CRAFT = {Type = 'Product', Amount = 50}
         }
     },
@@ -1221,7 +1221,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             YELLOW2 = {Type = 'Substance', Amount = 150},
-            ASTEROID1 = {Type = 'Substance ', Amount = 120},
+            ASTEROID1 = {Type = 'Substance', Amount = 120},
             JELLY = {Type = 'Product', Amount = 50}
         }
     },
@@ -1242,7 +1242,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             ASTEROID1 = {Type = 'Substance', Amount = 500},
-            VENTGEM = {Type = 'Product ', Amount = 100},
+            VENTGEM = {Type = 'Product', Amount = 100},
             PRODFUEL2 = {Type = 'Product', Amount = 100}
         }
     },
@@ -1268,7 +1268,7 @@ local Custom_Upgrade_Technology =
         Requirements =
         {
             GRENFUEL1 = {Type = 'Product', Amount = 3},
-            FUEL2 = {Type = 'Product', Amount = 60},
+            FUEL2 = {Type = 'Substance', Amount = 60},
             TECH_COMP = {Type = 'Product', Amount = 2}
         }
     },
@@ -1643,6 +1643,10 @@ local Cost_Types =
     NANITES = 'NANITES'
 }
 
+local Tech_Tree_Sub = 'UI_TECH_TREE_SUB'
+-- local Tech_Tree_Sub_Factory = 'UI_PRODUCT_TREE_FARM'
+local Tech_Tree_Sub_Exocrafts = 'UI_EXOMECH_TECH_TREE'
+
 -- You need to add the upgrade mods to the data otherwise you can buy the recipe in the nexus
 local Unlockable_Item_Trees =
 {
@@ -1650,7 +1654,7 @@ local Unlockable_Item_Trees =
     {
         Item_Trees_Property_Name = 'ShipTech',
         Item_Tree_Main_Tree = 'UI_SHIP_TECH_TREE',
-        Item_Tree_Page = 'UI_TECH_TREE_SUB',
+        Item_Tree_Page = Tech_Tree_Sub,
         Root_Tech = 'SHIPJUMP1',
         Cost_Type = Cost_Types.NANITES,
         Upgrade_Data =
@@ -1662,7 +1666,7 @@ local Unlockable_Item_Trees =
     {
         Item_Trees_Property_Name = 'SuitTech',
         Item_Tree_Main_Tree = 'UI_SUIT_TECH_TREE',
-        Item_Tree_Page = 'UI_TECH_TREE_SUB',
+        Item_Tree_Page = Tech_Tree_Sub,
         Root_Tech = 'ENERGY',
         Cost_Type = Cost_Types.NANITES,
         Upgrade_Data =
@@ -1681,7 +1685,7 @@ local Unlockable_Item_Trees =
     {
         Item_Trees_Property_Name = 'WeapTech',
         Item_Tree_Main_Tree = 'UI_WEAP_TECH_TREE',
-        Item_Tree_Page = 'UI_TECH_TREE_SUB',
+        Item_Tree_Page = Tech_Tree_Sub,
         Root_Tech = 'LASER',
         Cost_Type = Cost_Types.NANITES,
         Upgrade_Data =
@@ -1694,7 +1698,7 @@ local Unlockable_Item_Trees =
     {
         Item_Trees_Property_Name = 'ExocraftTech',
         Item_Tree_Main_Tree = 'UI_EXOCRAFT_TECH_TREE',
-        Item_Tree_Page = 'UI_TECH_TREE_SUB',
+        Item_Tree_Page = Tech_Tree_Sub_Exocrafts,
         Root_Tech = 'VEHICLE_ENGINE',
         Cost_Type = Cost_Types.NANITES,
         Upgrade_Data =
@@ -1702,25 +1706,25 @@ local Unlockable_Item_Trees =
             { Upgrade_Base = 'UC_DRIFT', Highest_Class_No = 4, Lowest_Class_No = 1 },
             { Upgrade_Base = 'UC_EXOB', Highest_Class_No = 4, Lowest_Class_No = 1 }
         }
-    },
-    Freighter_Page1 =
-    {
-        Item_Trees_Property_Name = 'FreighterTech',
-        Item_Tree_Main_Tree = 'UI_FREIGHTER_TREE',
-        Item_Tree_Page = 'UI_TECH_TREE_SUB',
-        Root_Tech = 'FRIGATE_FUEL_1',
-        Cost_Type = Cost_Types.NANITES,
-        Upgrade_Data = {}
-    },
-    Factory_Page1 =
-    {
-        Item_Trees_Property_Name = 'CraftProducts',
-        Item_Tree_Main_Tree = 'UI_PRODUCT_TREE',
-        Item_Tree_Page = 'UI_PRODUCT_TREE_FARM',
-        Root_Tech = 'PRODFUEL2',
-        Cost_Type = Cost_Types.FACTORY,
-        Upgrade_Data = {}
     }
+    -- Freighter_Page1 =
+    -- {
+    --     Item_Trees_Property_Name = 'FreighterTech',
+    --     Item_Tree_Main_Tree = 'UI_FREIGHTER_TREE',
+    --     Item_Tree_Page = Tech_Tree_Sub,
+    --     Root_Tech = 'FRIGATE_FUEL_1',
+    --     Cost_Type = Cost_Types.NANITES,
+    --     Upgrade_Data = {}
+    -- },
+    -- Factory_Page1 =
+    -- {
+    --     Item_Trees_Property_Name = 'CraftProducts',
+    --     Item_Tree_Main_Tree = 'UI_PRODUCT_TREE',
+    --     Item_Tree_Page = Tech_Tree_Sub_Factory,
+    --     Root_Tech = 'PRODFUEL2',
+    --     Cost_Type = Cost_Types.FACTORY,
+    --     Upgrade_Data = {}
+    -- }
 }
 ----------------------------------------------------------------------------------------------
 -------------------------------     USER INPUT     -------------------------------------------
@@ -1745,7 +1749,7 @@ Class_Choice = GUIF(Input_Class_Choice, 10)
 NMS_MOD_DEFINITION_CONTAINER =
 {
     MOD_FILENAME = Mode_Name,
-    MOD_DESCRIPTION = 'Custom mods',
+    MOD_DESCRIPTION = 'Custom Mods Galore',
     MOD_AUTHOR = Author,
     MODIFICATIONS =
     {
@@ -1775,20 +1779,20 @@ NMS_MOD_DEFINITION_CONTAINER =
                 {
                     MBIN_FILE_SOURCE = English_Path,
                     MXML_CHANGE_TABLE = {}
-                },
-                {
-                    MBIN_FILE_SOURCE = 'GCDEBUGOPTIONS.GLOBAL.MBIN',
-                    MXML_CHANGE_TABLE =
-                    {
-                        {
-                            PRECEDING_KEY_WORDS = {'LocTableList'},
-                            ADD =
-                            [[
-                                <Property name="LocTableList" value="NMS_]]..Custom_Language_Tag..[[" />
-                            ]]
-                        }
-                    }
                 }
+                --, {
+                --     MBIN_FILE_SOURCE = 'GCDEBUGOPTIONS.GLOBAL.MBIN',
+                --     MXML_CHANGE_TABLE =
+                --     {
+                --         {
+                --             PRECEDING_KEY_WORDS = {'LocTableList'},
+                --             ADD =
+                --             [[
+                --                 <Property name="LocTableList" value="NMS_]]..Custom_Language_Tag..[[" _index="8" />
+                --             ]]
+                --         }
+                --     }
+                -- }
             }
         }
     }
@@ -2115,8 +2119,7 @@ function Create_Shop_Entry(entry_ID, trade_setting)
     {
         SEC_EDIT = 'SHOP_'..string.upper(trade_setting)..'_MASTER_SEC',
         -- SEC_ADD_NAMED = 'SHOP_ENTRY'
-        ADD = [[<Property name="AlwaysPresentProducts" value="]]..entry_ID..[[" />]]
-
+        ADD = [[<Property name="OptionalProducts" value="]]..entry_ID..[[" />]]
     }
 end
 ----------------------------------------------------------------------------------------------
@@ -2441,7 +2444,7 @@ function Create_Language_Masters()
         VALUE_CHANGE_TABLE =
         {
             {'English', ''}
-        },
+        }
     }
 end
 
@@ -2452,7 +2455,7 @@ function New_Empty_Langauge_Entries(Language)
     }
 end
 
-function Fill_Custom_Language_File(Language, Language_Values)
+function Adding_Language_Entries(Language, Language_Values)
     for Language_Base, Language_Texts in pairs(Language_Values) do
         Language_Name_Lc_Id = Language_Base..'_NAME_LC'
         Language_Name_Id = Language_Base..'_NAME'
@@ -2540,13 +2543,12 @@ function Fill_Custom_Language_File(Language, Language_Values)
     end
 end
 
-function Add_Custom_Language_String()
+function Add_Custom_Language_Strings()
     Create_Language_Masters()
     for Language , Language_Values in pairs(Language_Data) do
-        local Langauge_file = "LANGUAGE/NMS_LOC8_"..string.upper(Language)..".MBIN"
+        local Langauge_file = 'LANGUAGE/NMS_LOC8_'..string.upper(Language)..'.MBIN'
         New_Empty_Langauge_Entries(Language)
-        Fill_Custom_Language_File(Language, Language_Values)
-
+        Adding_Language_Entries(Language, Language_Values)
         Changes_To_Mbin_Change_Table[#Changes_To_Mbin_Change_Table + 1] =
         {
             MBIN_FILE_SOURCE = Langauge_file,
@@ -2563,7 +2565,8 @@ end
 ----------------------------------------------------------------------------------------------
 -------------------------------     EXECUTING THE FUNCTIONS     ------------------------------
 ----------------------------------------------------------------------------------------------
-Add_Custom_Language_String()
+
+Add_Custom_Language_Strings()
 
 Create_Masters_Sec()
 Create_Class_Requirements()

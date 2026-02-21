@@ -198,7 +198,7 @@ SetCookingIngredientTrue = "True"
 
 NMS_MOD_DEFINITION_CONTAINER =
 {
-    ["MOD_FILENAME"]    = ModName..".pak",
+    ["MOD_FILENAME"]    = ModName",
     ["MOD_DESCRIPTION"] = ModDescription,
     ["MOD_AUTHOR"]      = Author,
     ["ADD_FILES"]       =

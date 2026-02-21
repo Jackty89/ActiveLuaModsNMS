@@ -67,7 +67,7 @@ ChangeDescIDandDescriptionForProductsArray =
 ---------------------------------------------------------------------------------
 NMS_MOD_DEFINITION_CONTAINER =
 {
-    ["MOD_FILENAME"]             = ModName..".pak",
+    ["MOD_FILENAME"]             = ModName,
     ["MOD_DESCRIPTION"]            = "Create custom food descriptions",
     ["MOD_AUTHOR"]                = Author,
     ["ADD_FILES"]                 =
